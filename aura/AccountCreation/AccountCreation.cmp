@@ -10,4 +10,5 @@
     <ui:inputText label="Account Description" value="{!v.accounts.Description}" />
     <ui:button label="Create" press="{!c.createaccount}" />
     <c:AccountList />
+    
 </aura:component>
