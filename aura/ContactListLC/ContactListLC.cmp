@@ -1,0 +1,12 @@
+<aura:component controller="ConListAuraEnabled">
+    <aura:attribute name="conlist" type="List" />
+    <ui:button label="get Contacts" press="{!c.takecontacts}" />
+<br/>
+	<aura:iteration items="{!v.conlist}" var="a">
+    	LastName: {!a.LastName}<br/>
+        FirstName: {!a.FirstName}<br/>
+        Email: {!a.Email}<br/>
+        Id: {!a.Id}<br/><br/><br/>
+    </aura:iteration>    
+	
+</aura:component>

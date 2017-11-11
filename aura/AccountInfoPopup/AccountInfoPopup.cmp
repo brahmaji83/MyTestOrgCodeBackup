@@ -1,0 +1,26 @@
+<aura:component >
+    <aura:attribute name="acc" type="Account"/>
+    
+    <aura:method name="showPopup" action="{!c.showPopup}"> 
+        <aura:attribute name="acc" type="Account"/> 
+        <aura:attribute name="x" type="Decimal"/> 
+        <aura:attribute name="y" type="Decimal"/> 
+    </aura:method>
+    
+    <aura:method name="hidePopup" action="{!c.hidePopup}"/> 
+    
+    <section aura:id="popup" class="slds-popover slds-nubbin--left slds-hidden" role="dialog">
+        <div class="slds-popover__body">
+            <lightning:layout >
+                <lightning:layoutItem >
+                    <lightning:icon iconName="action:new_account" size="small" class="popup-icon"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem >
+                    <h3 class="slds-section__title accName">{!v.acc.Name}</h3>
+                </lightning:layoutItem>               
+            </lightning:layout>  
+            <p>Description: {!v.acc.Description}</p>
+            <p>Industry: {!v.acc.Industry}</p>
+        </div>
+    </section>
+</aura:component>

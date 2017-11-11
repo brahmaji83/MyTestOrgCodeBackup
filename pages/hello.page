@@ -1,0 +1,18 @@
+<apex:page sidebar="false" showHeader="true" standardController="Pizza_Ordering__c">
+    <apex:pageBlock title="Pizza Details of {!Pizza_Ordering__c.Order_Name__c}">
+        <apex:pageblockSection title="PizzaInfo" collapsible="false">
+            <h> This is inside the Page Block</h> <br/><p/>
+            <b>Text with bold style</b><br/>
+            <h1>OrderName: {!Pizza_Ordering__c.Order_Name__c} </h1>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:pageblockSection title="Section" collapsible="false">
+        <h1>Hello This is my first visual force page with html tag</h1>
+        </apex:pageblockSection>
+        <apex:pageBlockSection title="Dumy" collapsible="true">
+        Dummy <br/>
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,3 @@
+<aura:component >
+	{!$Browser.isPhone}
+</aura:component>

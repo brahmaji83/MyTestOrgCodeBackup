@@ -1,0 +1,27 @@
+<apex:page controller="JSRemoting_Acc_Creation" >
+    <b>Account Name</b> <input type="text" id="AccName"/>
+    <button onClick = "CreateAccount();">CreateAccount</button>
+    <span id="op"></span>
+    
+    <script>
+    function CreateAccount(){
+    	var accname = document.getElementById('AccName').value;
+    	console.log(accname);
+    	JSRemoting_Acc_Creation.createanewaccount(
+    	accname,
+    	function(result,event){
+    		if(event.status)
+    		{
+    			console.log('entered');
+    			document.getElementById('op').innerHTML = result.Id;
+                console.log(window.location.href = '/' + result.Id);
+                //window.location.href = '/' + result.Id;
+    		}
+            
+    	},
+        {escape:true}    
+    	);
+   
+    }
+    </script>
+</apex:page>

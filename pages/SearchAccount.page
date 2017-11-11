@@ -1,0 +1,25 @@
+<apex:page controller="SearchanAccount">
+    <apex:form >
+    	Account <apex:inputText value="{!accname}"></apex:inputText>   	
+        <apex:commandButton value="Search" action="{!SearchAccount}" reRender="op1" status="accstatus"/>
+    </apex:form>
+    <apex:outputPanel id="op1">
+        <apex:actionStatus id="accstatus">
+            <apex:facet name="start">
+            <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.65;width:100%;">
+                <div class="waitingHolder" style="top: 100px; width: 91px;">
+                    <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                    <span class="waitingDescription1">Loading...</span>
+                </div>
+            </div>
+            </apex:facet>
+		<apex:facet name="stop">
+            <apex:pageBlock id="pb1" rendered="{!accrender}">
+                <apex:pageBlockTable value="{!acc}" var="a">
+                    <apex:column value="{!a.name}"/>
+                </apex:pageBlockTable>    
+            </apex:pageBlock>
+        </apex:facet>
+        </apex:actionStatus>
+    </apex:outputPanel>
+</apex:page>

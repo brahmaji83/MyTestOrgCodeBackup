@@ -1,0 +1,32 @@
+<apex:page controller="wizardcontroller">
+<apex:form >x
+    <apex:pageBlock tabStyle="Account">
+        <apex:pageBlockSection columns="1" title="Accounts">
+            <apex:outputField value="{!a.name}"/>
+            <apex:outputField value="{!a.industry}"/>
+            <apex:outputField value="{!a.phone}"/>
+            <apex:outputField value="{!a.Description}"/>
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="1" title="Opportunities">
+            <apex:outputField value="{!o.name}"/>
+            <apex:outputField value="{!o.closedate}"/>
+            <apex:outputField value="{!o.amount}"/>
+            <apex:outputField value="{!o.stagename}"/>
+        </apex:pageBlockSection> 
+        
+        <apex:pageBlockSection columns="1" title="Contacts">
+            <apex:outputField value="{!c.lastname}"/>
+            <apex:outputField value="{!c.firstname}"/>
+            <apex:outputField value="{!c.phone}"/>
+            <apex:outputField value="{!c.email}"/>
+        </apex:pageBlockSection>        
+        <apex:pageBlockButtons >
+        	<apex:commandButton value="Submit" action="{!save}" />
+            <apex:commandButton value="Page3" action="{!gotopage3}"/>
+            <apex:commandButton value="Page2" action="{!gotopage2}"/>
+            <apex:commandButton value="Page1" action="{!gotopage1}"/>            
+        </apex:pageBlockButtons>
+    </apex:pageBlock>            
+</apex:form>        
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page controller="AccCon">
+    <apex:pageBlock title="Accounts">
+    	<apex:pageBlockTable value="{!acc}" var="a">
+        	<apex:column value="{!a.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Contacts">
+    	<apex:pageBlockTable value="{!con}" var="c">
+        	<apex:column value="{!c.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

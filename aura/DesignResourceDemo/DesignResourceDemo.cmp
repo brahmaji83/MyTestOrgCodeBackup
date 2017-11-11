@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >	    
+    <aura:attribute name="accName" type="String" />
+    <aura:attribute name="accIndustry" type="String" />
+    <aura:attribute name="accPhone" type="Integer" />
+    <div class="c-container">
+        <lightning:layout verticalAlign="center">
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <lightning:input label="Account Name" name="myname" value="{!v.accName}" />                
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">                
+                <lightning:select name="selectItem" label="Select an Industry" value="{!v.accIndustry}">
+                	<option value="Banking">Banking</option>
+                    <option value="Apparel">Apparel</option>
+                    <option value="Communications">Communications</option>
+                </lightning:select>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                <lightning:input type="tel" label="Telephone" name="tel" value="{!v.accPhone}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">                
+                <lightning:button variant="brand" label="Create Account" onclick="{! c.handleClick }" />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>            
+</aura:component>

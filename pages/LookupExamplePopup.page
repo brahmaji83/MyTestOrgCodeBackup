@@ -1,0 +1,73 @@
+<apex:page controller="SearchAccountLookup"
+           title="Search"
+           showHeader="false"
+           sidebar="false"
+           tabStyle="Account">
+    <script> 
+    function fillIn(name, id)
+    {
+        console.log(name);
+        console.log(id);
+        var winMain=window.opener;
+        if (null==winMain)
+        {
+            winMain=window.parent.opener;
+        }
+        alert(name+' '+id);
+        var ele=winMain.document.getElementById('{!$CurrentPage.parameters.namefield}');
+        ele.value=id;
+        ele=winMain.document.getElementById('{!$CurrentPage.parameters.idfield}');
+        ele.value=id;
+        CloseWindow();
+    }
+    
+    function CloseWindow()
+    {
+        var winMain=window.opener;
+        if (null==winMain)
+        {
+            winMain=window.parent.opener;
+        }
+        winMain.closeLookupPopup();
+    }
+    </script> 
+    <apex:form >
+        <apex:tabPanel switchType="ajax">
+            <apex:tab label="Search">
+                <apex:pageBlock >
+                    <apex:pageBlockSection >
+                        <apex:outputLabel value="Account"></apex:outputLabel>
+                        <apex:inputText value="{!accname}" />
+                    </apex:pageBlockSection>        	
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Search" action="{!GetAccounts}" reRender="opt" />
+                    </apex:pageBlockButtons>
+                    <apex:outputPanel id="opt">
+                        <apex:pageBlockTable value="{!looupaccts}" var="a">
+                            <apex:column >
+                                <apex:outputLink value="#" onclick="fillIn('{!a.Name}', '{!a.Id}')">
+                                    {!a.Name}
+                                </apex:outputLink>
+                            </apex:column>
+                            <apex:column value="{!a.Id}" />
+                            <apex:column value="{!a.Industry}" />
+                        </apex:pageBlockTable>   
+                    </apex:outputPanel>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="New Account">
+            	<apex:pageBlock id="newAccount">
+                	<apex:pageBlockSection columns="2">
+                    	<apex:inputField value="{!acc.Name}" />
+                        <apex:inputField value="{!acc.Industry}" />
+                        <apex:inputField value="{!acc.Phone}" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons >
+                    	<apex:commandButton action="{!saveaccount}" value="Save Account" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </apex:tab>
+		</apex:tabPanel>            
+    </apex:form>
+</apex:page>

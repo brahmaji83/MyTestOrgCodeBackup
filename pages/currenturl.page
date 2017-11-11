@@ -1,0 +1,7 @@
+<apex:page controller="currenturl">
+<apex:form >
+    <apex:pageBlock >  
+	    Current URL: {!url}
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

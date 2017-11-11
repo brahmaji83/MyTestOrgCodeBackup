@@ -1,0 +1,18 @@
+<apex:page controller="concustcontr">
+<apex:outputPanel layout="inline">
+        <apex:pageBlock title="Contacts">
+            <apex:pageBlockTable value="{!cons}" var="c">
+                <apex:column value="{!c.firstname}"/>
+                <apex:column value="{!c.lastname}"/>            
+            </apex:pageBlockTable>              
+        </apex:pageblock>
+        
+        <apex:pageblock title="Accounts">
+            <apex:pageblockTable value="{!accs}" var="c">
+                <apex:column value="{!c.name}"/>
+                <apex:column value="{!c.type}"/>
+                <apex:column value="{!c.industry}"/>                                
+            </apex:pageblockTable>
+        </apex:pageblock>         
+</apex:outputPanel>
+</apex:page>

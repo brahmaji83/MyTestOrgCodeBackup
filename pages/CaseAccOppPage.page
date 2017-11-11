@@ -1,0 +1,10 @@
+<apex:page showHeader="true" sidebar="true" controller="CaseAccOppController">
+	<apex:form >		
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!OppList}" var="o">
+				<apex:column value="{!o.Name}" />
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

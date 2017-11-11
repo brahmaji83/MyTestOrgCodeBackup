@@ -1,0 +1,10 @@
+<apex:page readOnly="true" standardController="Account">
+    <apex:form >
+		<apex:inputField value="{!Account.Name}" ></apex:inputField>
+    <apex:commandButton value="Save" action="{!Save}"/>
+            </apex:form>
+
+    <apex:iframe src="/apex/hello10" scrolling="false" id="theIframe"/>
+
+
+</apex:page>

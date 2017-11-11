@@ -1,0 +1,12 @@
+<apex:page controller="accountprospect">
+   <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!prospectaccs}" var="a">
+            <apex:column value="{!a.name}"/>        
+        </apex:pageBlockTable>    
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton action="{!gotov}" value="Gotopage"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>    
+       </apex:form>
+</apex:page>

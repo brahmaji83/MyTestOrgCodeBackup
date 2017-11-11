@@ -1,0 +1,48 @@
+<apex:page controller="SearchAccountLookup" tabStyle="Address__c" >
+    <script>
+    var newWin=null; 
+    function openLookupPopup(name, id)
+    {
+        //alert('Alert is called');
+        var url="/apex/LookupExamplePopup?namefield=" + name + "&idfield=" + id;
+        newWin=window.open(url, 'Popup',
+                           'height=500,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+        if (window.focus) 
+        {
+            newWin.focus();
+        }
+        
+        return false;
+    }
+    
+    function closeLookupPopup()
+    {
+        if (null!=newWin)
+        {
+            newWin.close();
+        }  
+    }
+    </script>
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+                <apex:outputPanel >
+                    <apex:outputLabel value="Account"></apex:outputLabel>
+                    <apex:inputHidden value="{!addr.Account__c}" id="targetId"/>
+                        <apex:inputText value="{!addr.Account__c}" id="targetName" onfocus="this.blur()"
+                                        disabled="false" />
+                        <a href="#" onclick="openLookupPopup('{!$Component.targetName}', '{!$Component.targetId}'); return false">
+                            Lookup
+                        </a>
+				</apex:outputPanel>  
+                <apex:inputField value="{!addr.Street_Name__c}"></apex:inputField>
+                <apex:inputField value="{!addr.Postal_Code__c}"></apex:inputField>
+                <apex:inputField value="{!addr.City__c}"></apex:inputField>
+                <apex:inputField value="{!addr.Country__c}"></apex:inputField>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!SaveAddress}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

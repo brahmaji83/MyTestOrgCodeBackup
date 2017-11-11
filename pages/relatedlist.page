@@ -1,0 +1,5 @@
+<apex:page standardController="Book__c" extensions="addbook" >
+   
+    <apex:relatedList list="CombinedAttachments" />
+    Enter here
+</apex:page>

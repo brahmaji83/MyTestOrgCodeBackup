@@ -1,0 +1,9 @@
+<apex:page standardController="Opportunity">    
+<apex:form >    
+    <apex:pageBlock >
+    	<apex:pageBlockSection >
+        	<apex:inputField value="{!opportunity.name}" />
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

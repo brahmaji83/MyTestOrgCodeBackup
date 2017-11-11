@@ -1,0 +1,39 @@
+<apex:page controller="PracticeWrapper">
+    <script>
+    	function selectall(input, receivinputid)
+    	{
+            console.log('entered to function');
+            var inputarray = document.getElementsByTagName('input');
+            console.log(inputarray.length);
+            for(i=0; i<inputarray.length; i++) 
+                inputarray[i].checked = input.checked;
+		}            
+    </script>
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!wrpAcc}" var="a">
+            	<apex:column >
+                    <apex:facet name="header">
+                    	<apex:inputCheckbox onclick="selectall(this, 'inputid')" />
+                    </apex:facet>
+                	<apex:inputCheckbox value="{!a.checkbox}" id="inputid">
+                        
+                    </apex:inputCheckbox>
+                </apex:column>
+                <apex:column headerValue="Sl No" value="{!a.slno}" />
+                <apex:column headerValue="Account Name">
+                	<apex:outputField value="{!a.acc.Name}" />
+                </apex:column>
+                <apex:column >
+                	<apex:outputField value="{!a.acc.Industry}"  />
+                </apex:column>
+                <apex:column value="{!a.acc.Id}" />
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Select" action="{!wrpselected}" />
+                <apex:commandButton value="Save"  action="{!Save}"/>
+            </apex:pageBlockButtons>
+            <apex:inlineEditSupport />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="soql2">
+    <apex:form >
+        <apex:pageBlock title="Opportunities">
+        <apex:pageBlockButtons location="top">
+        	<apex:commandButton value="TodayOpportunities" action="{!soqltoday}"/>
+            <apex:commandButton value="All" action="{!soql2}"/>
+        </apex:pageBlockButtons>
+			<apex:pageBlockTable value="{!opp}" var="a">
+            	<apex:column value="{!a.name}"/>
+				<apex:column value="{!a.id}"/>
+                <apex:column value="{!a.createddate}"/>
+                <apex:column value="{!a.closedate}"/>
+                <apex:column value="{!a.amount}"/>
+            </apex:pageBlockTable>    
+    	</apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="onloadcontroller" action="{!onload}">
+<apex:form >
+    <apex:pageBlock >    
+        <apex:pageBlockTable value="{!code}" var="c" >        
+            <apex:column value="{!c.Enable__c}"/>              
+        </apex:pageBlocktable>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

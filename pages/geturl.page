@@ -1,0 +1,7 @@
+<apex:page controller="urlcontroller">
+   {!url}
+<br/>
+    {!uid}<br/>
+    {!$CurrentPage.parameters.Id}
+
+</apex:page>

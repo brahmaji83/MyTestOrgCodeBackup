@@ -1,0 +1,41 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" controller="getTestContactRev">
+    <aura:handler name="init" value="{!this}" action="{!c.getRecords}" />
+    <aura:attribute name="TestRevs" type="List" />
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Test Contact Rev Name">Test Contact Rev Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name">Amount</div>
+                </th>                
+                <th scope="col">
+                    <div class="slds-truncate" title="Cont">Contact</div>
+                </th> 
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.TestRevs}" var="t">
+                <tr>                    
+                    <td data-label="Test Contact Rev Name">
+                        <div class="slds-truncate" title="Name">{!t.Name}</div>
+                    </td>
+                    <td data-label="Amount__c">
+                        <div class="slds-truncate" title="Contact__c">{!t.Amount__c}</div>
+                    </td> 
+                    <td data-label="Contact__c">
+                <!--        <div class="slds-truncate" title="Contact__c">{!t.Contact__c}</div> 
+                        <div class="has-feedback">
+                            <input  type="text" value="{!t.Contact__c}" /> 
+                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        </div>
+				-->
+                        <force:inputField aura:id="contactName" value="{!t.Contact__c}"/>
+                    </td>
+                    
+                </tr>            
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

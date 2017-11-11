@@ -1,0 +1,14 @@
+<apex:page standardController="Lead" recordSetVar="records" docType="html-5.0" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightning" />    
+    <script>
+    $Lightning.use("c:LeadEmailOutIntegratorApp", function() {
+        $Lightning.createComponent("c:LeadEmailComponent",
+                                   {leadId: '{!selected}' },
+                                   "lightning",
+                                   function(cmp) {
+                                       
+                                   });
+    });
+    </script>    
+</apex:page>

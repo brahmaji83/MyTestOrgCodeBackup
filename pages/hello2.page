@@ -1,0 +1,19 @@
+<apex:page standardController="Pizza_Ordering__c" recordSetVar="a">
+    <apex:form >
+        <apex:pagemessages />
+        <apex:pageBlock title="List Orders" >
+            <apex:commandButton value="Save" action="{!Save}" />
+            <apex:commandButton value="QuickSave" action="{!QuickSave}"/>    
+            <apex:pageblocktable value="{!a}" var="b">
+                <apex:column value="{!b.Name}"/>
+                <apex:column value="{!b.Order_Name__c}"/>
+                <apex:column value="{!b.Discount__c}"/>
+                <apex:column value="{!b.Email_Id__c}"/>
+                <apex:column value="{!b.Name}"/>
+                <apex:column value="{!b.Coupon_Code__c}"/>
+                <apex:column value="{!b.Customer_Name__c}"/>   
+             </apex:pageblocktable> 
+        <apex:inlineEditSupport />
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page controller="AccountContactrelation">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!acc}" var="a" columns="2">
+                <apex:column value="{!a.name}"/>
+                <apex:column headerValue="Contact Lastname">
+                    <apex:dataTable value="{!a.contacts}" var="ac" border="1">                    
+                        
+                        <apex:column value="{!ac.lastname}"/>                    
+                    </apex:dataTable>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>    
+    </apex:form>    
+</apex:page>

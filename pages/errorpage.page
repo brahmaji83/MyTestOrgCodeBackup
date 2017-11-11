@@ -1,0 +1,13 @@
+<apex:page controller="SampleAccount">
+    <apex:form >
+    	<apex:pageBlock >
+			<apex:pageBlockSection >
+            	<apex:inputField value="{!acc.name}"/>
+                <apex:inputField value="{!acc.industry}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!insertacc}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

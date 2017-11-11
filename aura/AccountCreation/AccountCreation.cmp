@@ -1,0 +1,13 @@
+<aura:component controller="AccountCreationLC">
+    <aura:attribute name="accounts" type="Account" default="{'sobjectType' : 'Account',
+                                                            'Name':'',
+                                                            'Industry':'',
+                                                            'Description':''}" />
+    <aura:attribute name="Name" type="String" />
+    <aura:attribute name="Industry" type="String" />
+    <ui:inputText label="Account Name" value="{!v.accounts.Name}" />
+    <ui:inputText label="Account Industry" value="{!v.accounts.Industry}" />
+    <ui:inputText label="Account Description" value="{!v.accounts.Description}" />
+    <ui:button label="Create" press="{!c.createaccount}" />
+    <c:AccountList />
+</aura:component>

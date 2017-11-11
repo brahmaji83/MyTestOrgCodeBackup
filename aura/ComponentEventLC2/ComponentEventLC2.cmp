@@ -1,0 +1,6 @@
+<aura:component >
+	This is Component 2 <br/>
+    <aura:attribute name="cattr2" type="String" />
+    <aura:handler name="compevent" event="c:SimpleComponentEvent" action="{!c.handleEventinCE2}" />	
+    Displaying the event attribute value from Comp 2 - {!v.cattr2} 
+</aura:component>

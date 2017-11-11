@@ -1,0 +1,16 @@
+<apex:page controller="Block">
+<apex:form >
+
+    <apex:commandButton value="Customer Direct Accounts" action="{!Prospect}" reRender="Prospects"/>
+    <apex:commandButton value="Customer Channer Accounts" action="{!Customer}" reRender="Prospects"/>    
+    
+    <apex:outputPanel id="Prospects">
+    <apex:pageBlock title="Prospect Accounts"  rendered="{!B1}">
+        <apex:pageBlockTable value="{!accts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Type}"/>
+        </apex:pageBlockTable>    
+    </apex:pageBlock>
+    </apex:outputPanel>
+</apex:form>  
+</apex:page>

@@ -1,0 +1,7 @@
+<design:component >
+    <design:attribute name="accName" label="Account Name" description="Entersomething to default Account Name" />
+    <design:attribute name="accIndustry" label="Industry" datasource="Banking,Apparel,Communications" 
+                      description="Select a value to default Industry" />
+    <design:attribute name="accPhone" label="Phone" description="Enter a value to default Phone number" />
+    
+</design:component>

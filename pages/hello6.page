@@ -1,0 +1,10 @@
+<apex:page sidebar="false" showheader="true" standardController="Feedback__c" recordSetVar="a">
+<apex:form >
+    <apex:pageblock > <b>Feedback details:</b>
+        <apex:pageBlockTable value="{!a}" var="b">
+            <APEX:COLumn value="{!b.Q1__c}" />   
+            <APEX:COLumn value="{!b.Are__c}" /> 
+        </apex:pageBlockTable>
+    </apex:pageblock>
+</apex:form>    
+</apex:page>

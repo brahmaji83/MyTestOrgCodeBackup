@@ -1,0 +1,47 @@
+<apex:page controller="JSRemoter">
+    <script>
+    
+    	function getRemoteAccount(){
+            var accname = document.getElementById('acctsearch').value;
+			console.log(accname);                
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.JSRemoter.getAcc}',
+                accname,
+                function(result,event){
+                    if(event.status){
+                        //    alert(result);
+                        console.log(result);
+                        console.log(event.result+'Event Result');
+                        console.log(result.length > 0);
+                        console.log('this is lenght'+result.length);
+						if(result.length > 0)                        
+                        	document.getElementById('accountname').innerHTML = result[0].Id;   
+                        else
+                            document.getElementById('norecords').innerHTML = 'No records found';
+                    }
+                    else{
+                        document.getElementById('accountname').innerHTML = event.message;
+                    }    
+                },
+                {escape: true}
+            );      
+            
+    	}    
+    </script>
+    
+    <input id="acctsearch" type="text"/>
+    <button onclick="getRemoteAccount()">Get Account</button>
+    <apex:pageMessage severity="info" rendered="">
+    	<span id="norecords"></span>
+    </apex:pageMessage>
+    <apex:pageBlock >
+    	<apex:pageBlockSection >
+        	<apex:pageBlockSectionItem >
+            	<span id="accountname"></span>
+            </apex:pageBlockSectionItem>
+        	<apex:pageBlockSectionItem >
+
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>	      
+</apex:page>

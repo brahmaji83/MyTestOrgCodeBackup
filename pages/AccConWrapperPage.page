@@ -1,0 +1,22 @@
+<apex:page showHeader="true" sidebar="true" controller="AccConWrapper" >
+    <apex:form >    
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+        		<apex:inputText value="{!searchstring}" />    
+        		<apex:commandButton action="{!searchrecords}" value="Search"  reRender="accid" />    		
+        	</apex:pageBlockSection>
+        	
+        	<apex:pageBlockSection > 
+		        <apex:outputPanel id="accid">
+		            <apex:pageBlockTable value="{!wralist}" var="w">
+		                <apex:column headerValue="Name">
+		                	<apex:commandLink action="/{!w.objid}" value="{!w.objectname}" target="_blank" ></apex:commandLink>
+		                </apex:column>
+		                <apex:column value="{!w.objdata}" headerValue="Object" />    
+		            </apex:pageBlockTable>      
+				</apex:outputPanel>          
+			</apex:pageBlockSection>	
+			  
+        </apex:pageBlock>       
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+	SVG Example
+</aura:component>

@@ -1,0 +1,23 @@
+<aura:component >
+    <aura:attribute name="messages" type="List" default="['a','b','c']" />
+    
+    <p>Accessing an attribute list array</p>
+    <c:helloMessage message="{!v.messages[0]}" />
+    <c:helloMessage message="{!v.messages[1]}" />
+    <c:helloMessage message="{!v.messages[2]}" />
+    <br/>
+    
+    <p>Aura iteration</p>
+    <aura:iteration items="{!v.messages}" var="a">
+        <c:helloMessage message="{!a}"/>
+    </aura:iteration>    
+    <br/>
+    
+    <p>Aura-If Condition</p>
+    <aura:if isTrue="{!$Browser.isIPhone}">
+        <c:helloMessage message="{!v.messages[0]}" />
+    	<aura:set attribute="else">
+            <c:helloMessage message="{!v.messages[1]}" />
+        </aura:set>
+    </aura:if>
+</aura:component>

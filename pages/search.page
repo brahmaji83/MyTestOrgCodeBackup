@@ -1,0 +1,35 @@
+<apex:page controller="ActionSampleController">
+ <script type="text/javascript">
+ function jsMethod(){
+  actionFunc();
+  alert('Account Created');
+ }
+ 
+function jsmethod2(){
+    if ( document.getElementById('{!$Component.frm.nam}').value == '')
+    { 
+        alert('Something wrong');
+    }
+    else
+    {
+        alert('all good');
+    }
+}
+ </script>
+   
+<apex:form id="frm"> 
+    Account Name: <apex:inputText id="nam" value="{!accName}" />
+    <apex:actionFunction name="actionFunc" action="{!createAcccount}" reRender="form"/>
+    <apex:commandButton value="Create Account" onclick="jsMethod()" />
+    <apex:commandButton value="Validate Account" onclick="jsmethod2()" /> 
+    <apex:commandButton value="Search" action="{!searchaccount}" reRender="op"/>
+</apex:form> 
+<apex:outputPanel id="op">
+    <apex:pageBlock rendered="{!rend}">
+        <apex:pageBlockTable var="a" value="{!accs}">
+            <apex:column value="{!a.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:outputPanel>
+
+</apex:page>

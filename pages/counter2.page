@@ -1,0 +1,24 @@
+<apex:page >
+
+ <!--   <script type = "text/javascript">
+        window.onload=function()       
+        {        
+            alert("Hi");
+        };
+    </script> -->
+    
+    
+    
+    <script type="javascript">
+    function init(){
+        alert('Hi');
+    }    
+    </script>
+    <apex:form >
+        <body onload="init()">
+        
+        </body>
+    
+    
+    </apex:form>
+</apex:page>

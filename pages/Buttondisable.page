@@ -1,0 +1,6 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:inputField value="{!account.name}"></apex:inputField>
+    	<apex:commandButton value="Save" action="{Save}" disabled="true"/>
+    </apex:form>
+</apex:page>

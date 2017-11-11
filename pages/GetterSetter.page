@@ -1,0 +1,10 @@
+<apex:page controller="GetterSetter">
+{!myname}
+    {!myCompany}
+    
+    <apex:form >
+        <apex:inputText value="{!myname}" />
+  		<apex:inputText value="{!myCompany}"/>
+    	<apex:commandButton value="search"  action="{!accsearch}"/>
+	</apex:form>
+</apex:page>

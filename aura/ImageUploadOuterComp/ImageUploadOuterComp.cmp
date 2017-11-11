@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" 
+                controller="ImageUploadController">
+    
+    <aura:attribute name="generateCompNumber" type="Integer" default="0" />    
+    <aura:attribute name="primaryExist" type="Boolean" default="false" />
+    
+    <aura:attribute name="successUpload" type="Integer" default="0" />
+    <aura:handler event="c:ImageUploadSuccess" action="{!c.handleSuccessEvent}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.CheckAnyPrimary}" />
+    
+    <div class="exampleHolder" aura:id="parentspinner">
+        <lightning:spinner aura:id="mySpinner" class="slds-hide" />
+    </div>
+    <div class="slds">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-large-size--4-of-12 slds-medium-size--6-of-12 slds-size--12-of-12">
+                <div class="slds-text-heading--small">Primary Image?</div>
+            </div>
+            <div class="slds-large-size--4-of-12 slds-medium-size--6-of-12 slds-size--12-of-12">
+                <div class="slds-text-heading--small">Add Files</div>
+            </div>
+        </div>
+        {!v.body}
+        
+        <div class="slds-grid slds-wrap slds-m-top--large">
+            <div class="slds-size--12-of-12 slds-m-top--small">
+                <button class="slds-button slds-button--neutral" aura:id="addMoreBtn" onclick="{!c.addRow}">Add Row</button>
+                <button class="slds-button slds-button--brand" aura:id="addDoneBtn" onclick="{!c.callInnerCompEvent}">Upload Images</button>
+            </div>
+        </div>      
+    </div>
+</aura:component>

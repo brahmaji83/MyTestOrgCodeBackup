@@ -1,0 +1,4 @@
+<aura:component >
+    <ui:button aura:id="button" label="Click" press="{!c.toggle}" />
+    <p aura:id="text"> This is message</p>
+</aura:component>

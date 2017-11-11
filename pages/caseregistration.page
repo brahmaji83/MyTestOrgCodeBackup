@@ -1,0 +1,61 @@
+<apex:page controller="SubmitCaseController" title="Submit Case" showHeader="false"
+           standardStylesheets="true">
+<script>
+  function confirmCancel() {
+      var isCancel = confirm("Are you sure you wish to cancel?");
+      if (isCancel) return true;
+  
+     return false;
+  }  
+  </script>
+    
+    <apex:composition template="{!$Site.Template}">
+    <apex:insert name="header">
+    <c:SiteHeader />
+    <hr/>
+    </apex:insert>
+    <apex:define name="body">
+    <apex:form >
+        <apex:messages id="error"
+                   styleClass="errorMsg"
+                   layout="table"
+                   style="margin-top:1em;"/>
+      <apex:pageBlock title="" mode="edit">
+        <apex:pageBlockButtons >
+           <apex:commandButton value="Submit"
+                               action="{!SubmitCase}"/>
+           <apex:commandButton action="{!cancel}" value="Cancel" onclick="return confirmCancel()" immediate="true"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="New Enquiry"
+                               collapsible="false"
+                               columns="1">
+        <table>
+            <tr>
+                <th>Customer Name:</th>
+                <td>
+                <apex:inputText required="true" value="{!c.SuppliedName}"/></td>
+            </tr>
+            <tr>
+                <th>Customer Email:</th>
+                <td><apex:inputText required="true" value="{!c.SuppliedEmail}"/></td>
+            </tr>
+            <tr>
+                <th>Business Name:</th>
+                <td><apex:inputText required="true" value="{!c.SuppliedCompany}"/></td>
+            </tr>
+            <tr>
+                <th>Subject:</th>
+                <td><apex:inputText required="true" value="{!c.Subject}"/></td>
+            </tr>
+            <tr>
+                <th>Your Problem:</th>
+                <td><apex:inputTextArea required="true" rows="5" value="{!c.Description}"/></td>
+            </tr>
+         </table>
+        
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+   </apex:form>
+  </apex:define> 
+ </apex:composition>
+</apex:page>

@@ -1,0 +1,13 @@
+<aura:component controller="GetSessionId" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" access="global" >
+	<aura:handler event="c:StreamingAPIEvent" action="{!c.handleShowNotificationEvent}"/>
+
+    <ltng:require scripts="{!join(',',
+            $Resource.StreamingAPI + '/cometd.js',
+            $Resource.StreamingAPI + '/jquery-1.5.1.js',
+            $Resource.StreamingAPI + '/json2.js',
+            $Resource.StreamingAPI + '/jquery.cometd.js')}"
+                  afterScriptsLoaded="{!c.init}"/>
+    <!--<aura:handler name="init" value="{!this}" action="{!c.init}"/>-->
+    <lightning:button label="Add Account" Name="Add Account" onclick="{!c.buttonClicked}"/>
+  
+</aura:component>

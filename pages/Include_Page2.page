@@ -1,0 +1,5 @@
+<apex:page >
+    This is page 2
+    <br/>
+    <apex:include pageName="Include_Page1"/>
+</apex:page>

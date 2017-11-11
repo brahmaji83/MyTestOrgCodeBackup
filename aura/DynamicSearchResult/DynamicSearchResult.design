@@ -1,0 +1,5 @@
+<design:component >
+	<design:attribute name="PicklistValue" label="PicklistValue" description="Pass the Picklist field api name" />    
+    <design:attribute name="FieldsToDisplay" label="FieldsToDisplay" description="Field set to display the selected fields" />    
+    <design:attribute name="FieldSetObject" label="FieldSetObject" />
+</design:component>

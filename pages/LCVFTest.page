@@ -1,0 +1,16 @@
+<apex:page standardController="Account" >
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:HelloWorldTestApp", function() {
+          $Lightning.createComponent("c:justloadit",
+          {  },
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+</apex:page>

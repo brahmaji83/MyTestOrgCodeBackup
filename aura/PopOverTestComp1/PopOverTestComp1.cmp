@@ -1,0 +1,21 @@
+<aura:component >
+	<div class="slds-grid slds-grid--frame slds-grid--align-center slds-grid--vertical-align-center">
+        
+        <!--
+        <c:MyPopup >
+            <aura:set attribute="popoverBody">
+                Test1
+            </aura:set>                       
+            Test2
+        </c:MyPopup>
+        -->
+        <div id="anchor">            
+            Test 4
+            <div class="slds-popover slds-nubbin--bottom-left" role="dialog">                
+                <div class="slds-popover__body">
+                    Test 3
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

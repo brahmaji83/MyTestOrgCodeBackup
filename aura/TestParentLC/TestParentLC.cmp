@@ -1,0 +1,6 @@
+<aura:component >
+	Parent
+    <c:TestChildLC >
+        <c:TestGrandChildLC />
+    </c:TestChildLC>
+</aura:component>

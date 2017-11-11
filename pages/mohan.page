@@ -1,0 +1,30 @@
+<apex:page >
+<script>
+
+    function show(){
+        //alert(document.getElementById('{!$Component.form1.sl1}').innerHTML);
+        //alert('test');
+        //document.getElementById('{!$Component.form1.ol1}').innerHTML="You have selected Two";
+        //document.getElementById(form1:sl1)
+        
+        var myPicklistElement = document.getElementById('{!$Component.form1.sl1}');
+        var myPicklistValue = myPicklistElement.options[myPicklistElement.selectedIndex].value;
+        //alert(myPicklistValue );
+        
+        document.getElementById('{!$Component.form1.ol1}').innerHTML="You have selected"+myPicklistValue ;
+        
+
+    }
+</script>
+
+<apex:form id="form1">
+
+    <apex:selectList size="1" id="sl1" onchange="show()">
+        <apex:selectOption itemLabel="One" itemvalue="One" id="so1"/>
+        <apex:selectOption itemLabel="Two" itemvalue="Two" id="so2"/>            
+    </apex:selectList>    
+    <apex:outputLabel id="ol1"/>
+</apex:form>    
+
+
+</apex:page>

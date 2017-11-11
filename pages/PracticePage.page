@@ -1,0 +1,17 @@
+<apex:page controller="PracticePageController" action="{!updatecount}">
+    
+    <apex:form >
+        Pagecount<apex:outputText value="{!count}" label="Pagecount"></apex:outputText>
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	First Name<apex:inputText value="{!con.FirstName}"></apex:inputText>
+                Last Name<apex:inputText value="{!con.LastName}" />
+                Email <apex:inputText value="{!con.Email}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!save}" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

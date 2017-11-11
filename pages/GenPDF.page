@@ -1,0 +1,4 @@
+<apex:page controller="PDFGen" renderAs="pdf">
+    <apex:outputField value="{!acc.Name}" />
+    <apex:outputField value="{!acc.Phone}" />
+</apex:page>

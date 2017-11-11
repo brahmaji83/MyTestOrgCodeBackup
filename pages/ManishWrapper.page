@@ -1,0 +1,23 @@
+<apex:page controller="ManishWrapper">
+    
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!mw}" var="m">
+                <apex:column value="{!m.acc.Name}" />
+                <apex:column value="{!m.acc.Id}" />
+                <apex:column >
+        <!--        	<apex:selectRadio value="{!m.sbutton}" ></apex:selectRadio> -->
+                    <apex:inputCheckbox value="{!m.sbutton}" ></apex:inputCheckbox>
+                </apex:column>  
+                <apex:column >
+                	<apex:selectRadio value="{!m.sbutton}">
+                    	<apex:selectOption ></apex:selectOption>
+                    </apex:selectRadio>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Create a contact" action="{!createAcontact}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

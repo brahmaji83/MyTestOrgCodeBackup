@@ -1,0 +1,13 @@
+<apex:page controller="ManishSearch">
+<apex:form >
+    Account Name<apex:inputText value="{!accname}" />
+    <apex:commandButton value="Search" action="{!searchanacc}" />
+</apex:form>    
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!allacc}" var="a">
+        	<apex:column value="{!a.name}" />
+            <apex:column value="{!a.Id}" />
+            <apex:column value="{!a.Industry}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

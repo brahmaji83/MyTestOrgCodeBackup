@@ -1,0 +1,7 @@
+<aura:component >
+	<div class="slds-grid">
+        <div class="slds-col slds-size--4-of-6">
+            column 1
+        </div>
+    </div>
+</aura:component>

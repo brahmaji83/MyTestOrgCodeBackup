@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,force:hasSObjectName" access="global" controller="RelatedListController" >
+    <aura:attribute name="relLabels" type="String[]" />
+    <aura:attribute name="childObjects" type="String" default="Contacts,Opportunities"/>
+    <aura:attribute name="fieldLabels" type="String[]" />
+    <aura:attribute name="relObj" type="Object[]" />
+    <aura:attribute name="fieldwrap" type="RelatedListController.fieldWrapper[]" default="" />
+    
+    <ul>
+        <aura:iteration items="{!v.fieldwrap}" var="re"> 
+            <li>
+                <a href="#" onclick="{!c.fetchthedata}" data-index="{!re.relApiName}">{!re.relLabel}</a>  
+                
+            </li>
+            
+        </aura:iteration>
+    </ul>
+    <table>
+        <thead>
+            <tr class="slds-text-title--caps">
+                <aura:iteration items="{!v.fieldLabels}" var="field" >
+                    <th class="col">
+                        <div class="slds-truncate" title="{!field}">
+                            {!field}
+                        </div>                    
+                    </th>                
+                </aura:iteration>               		
+            </tr>
+        </thead>
+        <tbody>
+        	<aura:iteration items="{!v.relObj}" var="obj">
+            	{!obj.Id}
+                {!obj.Name}
+            </aura:iteration>
+        </tbody>
+    </table>
+    <aura:handler name="init" value="this" action="{!c.doInit}" />
+</aura:component>

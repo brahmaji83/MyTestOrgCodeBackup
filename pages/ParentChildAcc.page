@@ -1,0 +1,21 @@
+<apex:page controller="ParentChildAcc">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!accList}" var="a">                
+            	<apex:column >
+                    <apex:commandLink reRender="detop">
+                        {!a.Name}
+                        <apex:param name="accid" value="{!a.Id}" />
+                    </apex:commandLink>                
+                </apex:column>                
+            </apex:pageBlockTable>
+                         
+        </apex:pageBlock>
+        
+    </apex:form>
+    <apex:outputPanel id="detop">
+        <apex:detail subject="{!$CurrentPage.parameters.accid}" id="det" >
+            <apex:relatedList list="contacts" />
+        </apex:detail>
+    </apex:outputPanel> 
+</apex:page>

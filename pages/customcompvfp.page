@@ -1,0 +1,4 @@
+<apex:page >
+    <c:firstvfcomponent textcolor="red" text="Hello India" bordercolor="green" bordrwidth="10px" borderstyle="dashed"></c:firstvfcomponent>
+
+</apex:page>

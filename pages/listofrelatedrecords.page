@@ -1,0 +1,20 @@
+<apex:page controller="listofrelatedrecords">
+    <apex:pageBlock title="Accounts with related records">
+    	<apex:pageBlockTable value="{!lacc}" var="a">
+        	<apex:column value="{!a.name}" />
+            <apex:column value="{!a.Id}" />
+            <apex:column >
+            	<apex:pageBlockTable value="{!a.contacts}" var="c">
+                    <apex:column value="{!c.Id}" />
+                    <apex:column value="{!c.Name}" />
+                </apex:pageBlockTable>
+            </apex:column>
+            <apex:column >
+            	<apex:pageBlockTable value="{!a.Opportunities}" var="o">
+                    <apex:column value="{!o.Id}" />
+                    <apex:column value="{!o.Name}" />
+                </apex:pageBlockTable>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>    
+</apex:page>

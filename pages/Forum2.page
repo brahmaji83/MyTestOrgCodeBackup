@@ -1,0 +1,8 @@
+<apex:page standardController="Opportunity">
+    <apex:pageBlock helpTitle="Help" helpUrl="www.google.com">
+        <font color="red">
+            <apex:outputText style="font-weight: bold;" 
+                             value="IMPORTANT: My reminder message here" title="This is title" /><br/>
+        </font>
+    </apex:pageBlock>
+</apex:page>

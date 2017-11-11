@@ -1,0 +1,20 @@
+<apex:page controller="Practiceactionfunctioncls">
+    
+    <apex:form >
+    	<apex:actionFunction name="cacc" action="{!createacc}"/>
+        <apex:inputText value="{!accname}" />
+        <apex:commandButton value="Create" onclick="CreateAccount()" />
+        
+        
+   
+    
+    <script>
+    
+    	function CreateAccount(){
+        	cacc();
+        	alert('Account created');
+        }
+    </script>
+        
+         </apex:form>
+</apex:page>

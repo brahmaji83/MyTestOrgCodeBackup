@@ -1,0 +1,21 @@
+<apex:page controller="RemotingClass">
+    
+    <script>
+    	function getacc(val){
+        	RemotingClass.getstring(val, function(result, event)
+            {
+            	if(event.status){
+            		document.getElementById("valuehere").innerHTML = result;    
+            	}
+                                    
+			});
+        }    
+    </script>
+    
+    <button onclick="getacc('Brahma');">
+        Click here
+    </button><br/>
+    <div id="valuehere">
+        [Results]
+    </div>
+</apex:page>

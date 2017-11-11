@@ -1,0 +1,47 @@
+<apex:page standardController="Feedback__c">
+<apex:sectionHeader title="Feedback of {!Feedback__c.Name}" help="https://www.google.co.in" subtitle="Feedback Detail Page"/>
+    <script type="text/javascript">
+        function show(){
+            
+           // alert(document.getElementById('form1:pb1:pbs1:of1').value);
+           var Q1=document.getElementById('{!$Component.form1.pb1.pbs1.of1}').innerHTML;
+           var Q2=document.getElementById('{!$Component.form1.pb1.pbs1.of2}').innerHTML;
+           var Q3=document.getElementById('{!$Component.form1.pb1.pbs1.of3}').innerHTML;
+           var Q4=document.getElementById('{!$Component.form1.pb1.pbs1.of4}').innerHTML;
+           var Q5=document.getElementById('{!$Component.form1.pb1.pbs1.of5}').innerHTML;
+           
+           if(Q1=="5" && Q2=="5"){
+               alert("Success");
+           
+           }
+           else{
+               alert('failed');
+           }           
+        }
+    </script>
+    
+    <apex:form id="form1">
+         <apex:pageblock title="Feedback" id="pb1">
+            <apex:pageblockButtons >
+                <apex:commandButton title="Edit" value="Edit" action="{!Edit}"/>
+                <apex:commandButton title="Delete" value="Delete" action="{!Delete}"/>
+                <apex:commandButton title="Delete" value="Validate" onclick="show()"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection title="Feedback Details" collapsible="false" id="pbs1">
+                <apex:outputField value="{!Feedback__c.Q1__c}" id="of1"/><br></br>
+                <apex:outputField value="{!Feedback__c.Are__c}" id="of2"/><br></br>
+                <apex:outputField value="{!Feedback__c.Q3__c}" id="of3"/><br></br>
+                <apex:outputField value="{!Feedback__c.Q4__c}" id="of4"/><br></br>
+                <apex:outputField value="{!Feedback__c.Overall_Percentage__c}" id="of5"/>                            
+            </apex:pageBlockSection>
+        </apex:pageblock> 
+        <apex:commandLink value="Go to Feedback Home page" action="https://ap2.salesforce.com/a03/o" title="Click here to navigate to Main Page"/> 
+  
+    </apex:form>
+
+<!--    
+<a href="https://ap2.salesforce.com/a03/o">
+<img src="https://upload.wikimedia.org/wikipedia/en/8/87/Gtk-go-back-ltr.svg" href="https://ap2.salesforce.com/a03/o" alt="Back" width="30" height="30"/>   
+</a> -->
+
+</apex:page>

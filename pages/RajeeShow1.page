@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="accountextension1">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Account.Name}" />
+                <apex:inputField value="{!Account.Description}" />
+                <apex:inputField value="{!Account.Industry}" />
+                {!pagecount}
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!Save}" />
+            </apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>        
+</apex:page>

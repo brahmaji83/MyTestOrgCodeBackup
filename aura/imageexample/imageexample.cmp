@@ -1,0 +1,6 @@
+<aura:component >hi
+    <center>
+	<img src="{!$Resource.brahmaji83__NoResults}" />
+        
+        </center>
+</aura:component>

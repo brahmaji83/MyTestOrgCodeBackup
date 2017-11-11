@@ -1,0 +1,16 @@
+<apex:page controller="wizardcontroller">
+<apex:form >
+    <apex:pageBlock >
+    	<apex:pageBlockSection >
+        	<apex:inputField value="{!o.name}"/>
+        	<apex:inputField value="{!o.CloseDate}"/>
+        	<apex:inputField value="{!o.Amount}"/>
+			<apex:inputField value="{!o.StageName}"/>            
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Page3" action="{!gotopage3}"/>
+            <apex:commandButton value="Page1" action="{!gotopage1}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page controller="rerender_multiple">
+<apex:form >
+    <apex:pageBlock title="Accounts">
+    	<apex:pageBlockTable value="{!acc}" var="a" id="pb1" title="Accounts">        	
+            	<apex:column >
+            		<apex:commandLink reRender="op">
+                    	{!a.name}
+                        <apex:param name="accid" value="{!a.id}"/>
+                    </apex:commandLink>
+            	</apex:column>            
+        </apex:pageBlockTable>
+    	<apex:pageBlockTable value="{!con}" var="c" id="pb2" title="Contacts">
+        	<apex:column value="{!c.name}"/>
+        </apex:pageBlockTable>
+       	<apex:pageBlockButtons >
+        	<apex:commandButton action="{!fetch}" value="fetch" reRender="pb1, pb2"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    <apex:outputPanel id="op">
+    	<apex:detail subject="{!$CurrentPage.parameters.accid}" relatedList="false" id="det"/>
+    </apex:outputPanel>	
+</apex:form>
+</apex:page>

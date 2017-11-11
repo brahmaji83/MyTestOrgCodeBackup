@@ -1,0 +1,41 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" controller="LeadEmailOutIntegratorSS" >
+    <aura:attribute name="leadId" type="String" default="NotDefined"/>
+    <aura:attribute name="recordId" type="String" default="NotDefined"/>
+    <aura:attribute name="selectedText" type="string" />
+	<aura:attribute name="myText" type="string"/>
+    <aura:attribute name="disableEmail" type="Boolean"/>   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     
+    <div class="c-container">        
+		<lightning:card >
+            <aura:set attribute="title">
+            Send Lead To External
+        	</aura:set>
+            <lightning:layout verticalAlign="end"  horizontalAlign="space"  >               
+                <lightning:layoutItem flexibility="grow" padding="around-small">
+                 <!--   <aura:if isTrue="{!v.disableEmail}"> -->
+                        <ui:inputSelect aura:id="ExternalSystemSelector" multiple="false" value="{!v.selectedText}" disabled="{!v.disableEmail}">
+                            <ui:inputSelectOption text="ATURB" label="ATURB" value="true"/>
+                            <ui:inputSelectOption text="Lead Central" label="Lead Central"/>
+                            <ui:inputSelectOption text="Baldor" label="Baldor"/>
+                            <ui:inputSelectOption text="External User" label="External User"/>
+                        </ui:inputSelect>
+                    <!--    <aura:set attribute="else">
+                            <ui:inputSelect aura:id="ExternalSystemSelector" multiple="false" value="{!v.selectedText}"/>
+						</aura:set>
+                    </aura:if> -->
+                   
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="shrink" padding="around-small"> 
+                    <aura:if isTrue="{!v.selectedText == 'External User' ? 'true' : 'false'  }">
+						<!--<ui:inputText aura:id="ExternalUserEmailId" label="Email" class="field" value="{!v.myText}" updateOn="click"/> -->
+                        <ui:inputText aura:id="ExternalUserEmailId" label="Email" class="field" value="{!v.myText}" disabled="{!v.disableEmail}" onError="{!c.handleError}" onClearErrors="{!c.handleClearError}" />
+  					</aura:if>                 	                 
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="shrink" padding="around-small">
+                    <lightning:button variant="brand" label="Send" onclick="{!c.sendToExternalSystem}"/>
+                </lightning:layoutItem>                         
+            </lightning:layout>
+        </lightning:card>
+    </div>
+</aura:component>

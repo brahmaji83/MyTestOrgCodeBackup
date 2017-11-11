@@ -1,0 +1,20 @@
+<apex:page controller="concustcontr">
+    <apex:panelGrid columns="2" title="List of Accounts and Contacts" headerClass="Hello" width="100%">
+
+        <apex:pageBlock title="Contacts">
+            <apex:pageBlockTable value="{!cons}" var="c">
+                <apex:column value="{!c.firstname}"/>
+                <apex:column value="{!c.lastname}"/>            
+            </apex:pageBlockTable>              
+        </apex:pageblock>
+        
+        <apex:pageblock title="Accounts">
+            <apex:pageblockTable value="{!accs}" var="c">
+                <apex:column value="{!c.name}"/>
+                <apex:column value="{!c.type}"/>
+                <apex:column value="{!c.industry}"/>                                
+            </apex:pageblockTable>
+        </apex:pageblock>
+        
+    </apex:panelGrid>
+</apex:page>

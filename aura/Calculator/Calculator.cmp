@@ -1,0 +1,37 @@
+<aura:component >
+    <aura:attribute name="inputattr" type="String" default="0" />
+    <div class="slds-size--1-of-3"></div>
+    <div class="slds-size--1-of-3">
+        <div class="slds-box slds-box--x-small slds-m-around--x-small">
+            <div class="row">
+                <ui:inputText class="slds-input" value="{!v.inputattr}" />
+            </div>
+            <div class="styleit">
+                <div>            
+                    <lightning:button label="1" aura:id="1" class="slds-button slds-button--brand styleit slds-p-bottom--xx-small" onclick="{!c.addit}" />
+                    <lightning:button label="2" aura:id="2" class="slds-button--brand styleit slds-p-bottom--xx-small" onclick="{!c.addit}" />
+                    <lightning:button label="3" aura:id="3" class="slds-button slds-button--brand styleit" onclick="{!c.addit}" />
+                    <lightning:button label="4" aura:id="4" class="slds-button slds-button--brand styleit" onclick="{!c.addit}" />  
+                </div>
+                <div>
+                    <lightning:button label="5" aura:id="5" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="6" aura:id="6" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="7" aura:id="7" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="8" aura:id="8" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                </div>
+                <div>
+                    <lightning:button label="9" aura:id="9" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="0" aura:id="0" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="-" aura:id="-" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="+" aura:id="+" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                </div>
+                <div>
+                    <lightning:button label="%" aura:id="%" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="/" aura:id="/" class="slds-button slds-button--brand" onclick="{!c.addit}" />
+                    <lightning:button label="clear" aura:id="clear" class="slds-button slds-button--brand" onclick="{!c.clearit}" />
+                    <lightning:button label="Calculate" aura:id="Calculate" class="slds-button slds-button--brand" onclick="{!c.calculate}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

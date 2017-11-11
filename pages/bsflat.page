@@ -1,0 +1,49 @@
+<apex:page controller="bsflatcontroller" action="{!getCountries}">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <script>
+    	$(document).ready(function(){         	
+        console.log('{!vallist}');
+        	$(".SL1").change(function(){
+                $("a").removeClass("bsstyle");
+                
+                if($(".SL1").val() == "Item 1") {                    
+                    $("#li1").children().addClass("bsstyle");                     
+                }
+                if($(".SL1").val() == "Item 2") {
+                    $("#li1").children().addClass("bsstyle");
+                    $("#li2").children().addClass("bsstyle");
+                }
+                if($(".SL1").val() == "Item 3") {
+                    $("#li1").children().addClass("bsstyle");
+                    $("#li2").children().addClass("bsstyle");
+                    $("#li3").children().addClass("bsstyle");
+                }
+            });        	
+        });
+        
+        
+        
+    </script>
+    <apex:stylesheet value="{!$Resource.bsflat}" />
+    <apex:form >
+        <apex:selectList multiselect="false" size="1" id="SL1" styleClass="SL1" > 
+            <apex:selectOption itemValue="Item 1"></apex:selectOption>
+            <apex:selectOption itemValue="Item 2"></apex:selectOption>
+            <apex:selectOption itemValue="Item 3"></apex:selectOption>
+            <apex:selectOption itemValue="Item 4"></apex:selectOption>
+        </apex:selectList>
+        <apex:commandButton value="Alert it " action="Alertit();" />
+	</apex:form>        
+    <div id="crumbs">
+	<ul id="ul">
+		<li id="li1"><a href="#1">One</a></li>
+		<li id="li2"><a href="#2">Two</a></li>
+		<li id="li3"><a href="#3">Three</a></li>
+		<li id="li4"><a href="#4">Four</a></li>
+		<li id="li5"><a href="#5">Five</a></li>
+        
+	</ul>
+</div>
+</apex:page>

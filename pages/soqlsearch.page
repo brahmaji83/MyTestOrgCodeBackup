@@ -1,0 +1,26 @@
+<apex:page controller="soqlsearch">
+    <apex:form >
+    	<apex:pageBlock title="Search">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Enter Name"/>
+                	<apex:inputText value="{!accname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Enter Industry"/>
+                    <apex:inputText value="{!industry}"/>
+                </apex:pageBlockSectionItem>        
+            </apex:pageBlockSection>        
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search" action="{!search}"/>
+                <apex:commandButton value="dynamicsearch" action="{!dynamicsearch}"/>
+			</apex:pageBlockButtons>    
+        </apex:pageBlock>
+        <apex:pageBlock title="Search Result" rendered="{! !ISNULL(acc)}">
+        	<apex:pageBlockTable value="{!acc}" var="a" title="Search Result">
+            	<apex:column value="{!a.name}"/>
+            	<apex:column value="{!a.industry}"/>
+            </apex:pageBlockTable>  
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page controller="testcase" >
+    <script>
+    .scase{  
+        color:white;  
+        background-color:red;  
+        padding:5px;  
+		} 	
+    </script>
+        
+    <apex:form >   
+        <apex:pageMessages />
+        <apex:actionFunction action="{!Save}" name="savecase"/>
+        <apex:sectionHeader title="Case Submission Form" help="google.com" />
+        <apex:pageBlock >            
+        	<apex:pageBlockSection >                
+                <apex:inputField value="{!caseob.subject}" required="true"/>
+                <apex:inputField value="{!caseob.Origin}" required="true"/>
+                <apex:inputField value="{!caseob.Status}" required="true"/>
+                <apex:inputText value="{!caseob.SuppliedEmail}" required="true"/>
+                
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons location="bottom">
+        		<apex:commandButton value="Submit" action="{!save}" onClick="Submit()"/>                
+        	</apex:pageBlockButtons>
+        </apex:pageBlock>    	
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="message" type="String" />
+    <aura:attribute name="bbo" type="Boolean" />
+    {!v.message}
+    <br/>
+    {!v.bbo}
+    <ui:button label="button name" disabled="{!v.bbo}" press="{!c.handleClick}" />
+    
+</aura:component>

@@ -1,0 +1,10 @@
+<apex:page controller="getpicklistvalue">
+    <apex:form >
+    	<apex:selectList value="{!selectedvalue}" size="1" multiselect="false">
+        	<apex:actionSupport event="onchange" action="{!selectedpickvalue}" />
+            <apex:selectOptions value="{!picklistvalues}">
+            	
+            </apex:selectOptions>
+        </apex:selectList>
+    </apex:form>
+</apex:page>

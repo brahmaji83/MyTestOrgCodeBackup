@@ -1,0 +1,53 @@
+<apex:page >
+
+<script>
+
+    function validate()
+    {
+        var av=document.getElementById('{!$Component.frm.pb.pbs.pbsi1.aa}').value;
+        var bv=document.getElementById('{!$Component.frm.pb.pbs.pbsi2.bb}').value;
+        var cv=av+bv;
+        if(document.getElementById('{!$Component.frm.pb.pbs.pbsi1.aa}').value == '')
+        {
+            alert("FIRST NAME is mandatory");
+        }
+        if(document.getElementById('{!$Component.frm.pb.pbs.pbsi2.bb}').value == '')
+        {
+            alert("LAST NAME is mandatory");
+        }
+         else             
+        {
+            document.getElementById('{!$Component.frm.pb.pbs.pbsi3.cc}').innerHTML = cv;
+            // alert("NAME has been inserted CONCATINATED");
+        }
+    }
+        
+  </script>  
+<apex:form id="frm"> 
+	<apex:pageBlock id="pb" title="PageBlock">   
+		<apex:pageBlockSection id="pbs" title="PB Secion" collapsible="false">
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel value="FIRST NAME"/>
+        	</apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="pbsi1">
+            	<apex:inputText id="aa"/>
+        	</apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            	<apex:outputLabel value="LAST NAME"/>
+       		</apex:pageBlockSectionItem> 
+            <apex:pageBlockSectionItem id="pbsi2">
+            	<apex:inputText id="bb"/>
+       		</apex:pageBlockSectionItem>
+       		<apex:pageBlockSectionItem >
+            	<apex:outputLabel value="FULL NAME"/>
+        	</apex:pageBlockSectionItem> 
+            <apex:pageBlockSectionItem id="pbsi3">
+            	<apex:outputLabel id="cc"/>
+       		</apex:pageBlockSectionItem>        
+		</apex:pageBlockSection>    
+		<apex:pageBlockButtons location="bottom">      
+    		<apex:commandButton value="CONCAT" onclick="validate()" reRender="pbs"/>
+        </apex:pageBlockButtons>  
+	</apex:pageBlock>
+</apex:form>
+</apex:page>

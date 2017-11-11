@@ -1,0 +1,30 @@
+<aura:component controller="AccontSearchLC">
+    <aura:attribute name="searchstring" type="String" />
+    <aura:attribute name="searchresult" type="Account[]" />
+    
+    <lightning:input name="SearchInput" value="{!v.searchstring}" label="Search Input lightning" aura:id="searchid"/>
+    <lightning:button label="Search" onclick="{!c.searchit}" variant="brand"/> 
+    
+    <table class="slds-table slds-table--bordered  slds-table--fixed-layout " role="grid">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th><span class="slds-truncate"><b>Name</b></span></th>
+                    <th><span class="slds-truncate"><b>Id</b></span></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.searchresult}" var="con">
+                    <tr class="slds-hint-parent">
+                        <td scope="row" data-label="MDM">
+                            <span><div class="slds-truncate" title="{!con.Name}"><a href="javascript:void(0);" onclick="{!c.openModel}">{!con.Name}</a></div></span>
+                        </td>
+                        <td data-label="Company Name">
+                            <span><div class="slds-truncate" title="{!con.Id}">{!con.Id}</div></span>
+                        </td>
+                        
+                    </tr>
+                </aura:iteration>
+            </tbody> 
+        </table>
+</aura:component>

@@ -1,0 +1,18 @@
+<apex:page controller="wizardcontroller">
+<apex:form >
+    <apex:pageBlock title="Account Creation">
+    	<apex:pageBlockSection columns="1">
+        	<apex:inputField value="{!a.name}"/>
+            <apex:inputField value="{!a.industry}"/>
+            <apex:inputField value="{!a.Phone}"/>
+            <apex:inputField value="{!a.Description}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+        	<apex:commandButton value="Page2" action="{!gotopage2}"/>
+            <apex:commandButton value="Page3" action="{!gotopage3}"/>
+            <apex:commandButton value="Review page" action="{!reviewpage}"/>
+            
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>        
+</apex:page>

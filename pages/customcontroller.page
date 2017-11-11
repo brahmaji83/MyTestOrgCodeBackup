@@ -1,0 +1,15 @@
+<apex:page controller="cust1">
+  <apex:pageblock >
+        <apex:pageblocktable value="{!acts}" var="a">
+            <apex:column value="{!a.name}"/>       
+            <apex:column value="{!a.id}"/>   
+        </apex:pageblocktable>
+  </apex:pageblock>
+  
+  <apex:pageblock >
+      <apex:pageblocktable value="{!cons}" var="c">
+          <apex:column value="{!c.lastname}"/>
+          <apex:column value="{!c.firstname}"/>          
+      </apex:pageblocktable>
+  </apex:pageblock>
+</apex:page>

@@ -1,0 +1,72 @@
+<apex:page applyHtmlTag="true" showHeader="true">
+    <html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+        Hello
+    <head>
+JQuery Tutuorial
+</head>
+<title>
+JQuery Tututorial Title
+</title>
+<div id="wrapper">
+<p>
+Till Sunday, everyone was raving about the Mr Nice Guys of Chennai who were protesting peacefully at the Marina beach. No one was drunk, no one was teasing the women who had turned up in large numbers, there were no cases of molestation or chain snatching reported either. Anuvairam, a B Tech student told me her mother felt no worry sending her to this sea of humanity. "This is Chennai, all the men here have behaved impeccably," she told me, to loud cheers from the assembled male crowd.
+</p>
+<br/>
+<p id="p2">
+So were the men of Chennai <em>wolves </em>in sheep's clothing? How did the nice guys suddenly transform into stone-pelters and arsonists overnight?
+</p>
+<p id="p3">
+They did not as you would <i>have </i> realised if you were on the ground in <a href="http://google.com"> <em>Chennai </em> </a>or saw the videos that have surfaced from different parts of Chennai.
+</p>
+<h2> States </h2>
+<ol id="oListTypes">
+<li name="li1"> Karnataka</li>
+<li> Andhra pradesh</li>
+<li> Telangana</li>
+<li> tamil nadu</li>
+</ol>
+<script type="text/javascript">
+
+$("document").ready(function(){
+	$("#wrapper").css("width","500");
+	$("#wrapper").css("color","red");
+	$("#wrapper").css("width","500");
+	
+	$("#p2").css("color","purple");
+	$("#p2").css({
+	});
+	$("a").css("color","red");
+	$("#p3").css("color","green");	
+	$("li[name]").html("updatesdsd");
+	$("a[href*='google']").css("font-weight","bolder");
+	$("img[alt^='des']").css({
+		"border-color":"black",
+		"border-width":"1px",
+		"border-style":"solid"
+	});
+	<!-- 
+//	^  To search from beginning
+//	$  To search from end
+//	*  anywhere
+	-->
+	$("#oListTypes li:not(:contains(desh))").css("color","yellow");
+	
+	$("p:has(i)").hide();
+	alert($("p:has(i)").html());
+	$("p:has(i)").html("<i>have</i>").show();
+	$("p:has(i)").after("<p id='pafter'> This is the paragraph </p>");
+	$("#pafter").click(function(){
+		$(this).hide();
+	});
+	$("p:has(i)")
+});
+
+</script>
+
+
+</div>
+    </html>
+    
+
+</apex:page>

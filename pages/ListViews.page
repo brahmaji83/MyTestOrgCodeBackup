@@ -1,0 +1,32 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+    <apex:pageBlock title="Viewing Accounts">
+    	<apex:form >
+        	<apex:panelGrid columns="2">
+                <apex:outputLabel value="View: "/>
+                <apex:selectList value="{!filterid}" size="1" multiselect="false">
+                    <apex:actionSupport event="onchange" reRender="pbs" status="sts" />                   
+                	<apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>                
+                </apex:selectList>            
+            </apex:panelGrid>
+        	<apex:pageBlockSection id="pbs">
+                <apex:actionStatus id="sts" >
+                    <apex:facet name="start">
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.65;width:100%;">
+                        <div class="waitingHolder" style="top: 100px; width: 91px;">
+                            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                            <span class="waitingDescription1">Loading...</span>
+                            <span class="waitingDescription">Requesting...</span>    
+                        </div>
+                    </div>
+    				</apex:facet>
+                    <apex:facet name="stop">         
+                        <apex:dataList value="{!accounts}" var="a">
+                            {!a.name}
+                        </apex:dataList>
+                    </apex:facet>
+                    
+                </apex:actionStatus>
+            </apex:pageBlockSection>
+        </apex:form>
+	</apex:pageBlock>        
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page controller="PracticeWrapper2">
+    <script>
+    function selectall(ti, receiveinpid){
+    	var inputElem = document.getElementsByTagName("input");
+    	for(var i=0;i<inputElem.length;i++){
+			inputElem[i].checked = ti.checked;
+		}                                         	
+    }
+    </script>
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockTable value="{!wacc}" var="a">
+            	<apex:column >
+                    <apex:facet name="header">
+                    	<apex:inputCheckbox onClick="selectall(this, 'inputid')" />
+                    </apex:facet>
+                	<apex:inputCheckbox value="{!a.b}"  />
+                </apex:column>
+                <apex:column value="{!a.a.Name}" />
+                <apex:column value="{!a.s}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

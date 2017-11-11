@@ -1,0 +1,21 @@
+<apex:page controller="concustcontr">
+    <apex:pageblock title="List of COntacts">           
+        
+        <apex:tabPanel switchType="ajax">  
+        <apex:tab label="List of Contacts" labelWidth="300">
+
+            <apex:pageblockTable value="{!cons}" var="c">
+                <apex:column value="{!c.firstname}"/>
+                <apex:column value="{!c.lastname}"/>                                
+            </apex:pageblockTable>                
+        </apex:tab>
+            
+        <apex:tab label="List of Accounts" labelWidth="300">
+            
+            <apex:pageblockTable value="{!accs}" var="c">
+                <apex:column value="{!c.name}"/>
+            </apex:pageblockTable>
+        </apex:tab> 
+        </apex:tabPanel>  
+    </apex:pageblock>
+</apex:page>

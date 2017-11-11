@@ -1,0 +1,5 @@
+<aura:component >
+	This is parent component
+    <ui:inputText label="Search" value="{!v.searchstring}" />
+    <ui:button label="Create" press="{!c.NewcomponentCreate}" />
+</aura:component>

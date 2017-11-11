@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,force:hasSObjectName" access="global" 
+                controller="DynamicSearchController">
+
+    <aura:handler name="init" value="{!this}" action="{!c.getValues}" />
+
+    <aura:attribute name="searchStr" type="String" />
+    <aura:attribute name="selectedValue" type="String" />    
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="attrFieldName" type="String" default="Status"/>
+    
+    <aura:attribute name="lstValues" type="String[]" />
+    <lightning:input label="Enter something" name="inpSearch" value="{!v.searchStr}" aura:id="inpId" />
+    
+    <lightning:select name="mySelect" label="Select a value" aura:id="mySelect"
+                      value="{!v.selectedValue}">
+        <aura:iteration items="{!v.lstValues}" var="item">
+            <option text="{!item}" value="{!item}" selected="{!item.selected}"/>
+        </aura:iteration>
+    </lightning:select>
+        
+    <lightning:button variant="brand" label="Search" onclick="{! c.handleSearch }" />   
+    <aura:registerEvent name="DynamicSearchEvent" type="c:DynamicSearchEvent"/>
+</aura:component>

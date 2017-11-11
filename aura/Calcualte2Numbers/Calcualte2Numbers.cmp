@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="FirstNumber" type="integer" />	
+    <aura:attribute name="SecondNumber" type="integer" />	
+    <aura:attribute name="Result" type="integer" />	
+    
+    <ui:inputNumber label="First Number" value="{!v.FirstNumber}" />
+    <ui:inputNumber label="Second Number" value="{!v.SecondNumber}" />
+    <ui:button press="{!c.getresult}" >Calculate</ui:button>
+    
+    <ui:outputNumber value="{!v.Result}">Result</ui:outputNumber>
+</aura:component>

@@ -1,0 +1,17 @@
+<apex:page controller="wizardcontroller">
+    <apex:form >
+    <apex:pageBlock >
+    	<apex:pageBlockSection >
+        	<apex:inputField value="{!c.firstname}"/>
+        	<apex:inputField value="{!c.lastname}"/>
+        	<apex:inputField value="{!c.phone}"/>
+			<apex:inputField value="{!c.email}"/>            
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Page2" action="{!gotopage2}"/>
+            <apex:commandButton value="Page1" action="{!gotopage1}"/>
+            <apex:commandButton value="Review Page" action="{!reviewpage}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

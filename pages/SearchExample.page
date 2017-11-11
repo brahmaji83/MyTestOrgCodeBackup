@@ -1,0 +1,18 @@
+<apex:page controller="SearchAccount">
+    <apex:form >
+    	<apex:inputText value="{!acc}"/>  
+        <apex:commandButton action="{!searchacc}" value="Search"/>
+    </apex:form>   
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:outputPanel id="op" rendered="{!accr}">
+    	<apex:pageBlock id="pb">
+            
+        	<apex:pageBlockTable value="{!lacc}" var="a">
+            	<apex:column value="{!a.name}"/>
+                <apex:column value="{!a.id}"/>
+                <apex:column value="{!a.industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    
+    </apex:outputPanel>
+</apex:page>

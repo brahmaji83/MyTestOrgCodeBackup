@@ -1,0 +1,11 @@
+<apex:page controller="c1">
+    <apex:pageblock title="Opportunities">
+        <apex:pageblocktable value="{!Opt}" var="b" title="Block">
+            <apex:column value="{!b.Name}"/>        
+            <apex:column value="{!b.Amount}"/>
+            <apex:column value="{!b.CloseDate}"/>                
+            <apex:column value="{!b.ExpectedRevenue}"/>                
+        </apex:pageblocktable>
+    </apex:pageblock>
+
+</apex:page>

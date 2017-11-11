@@ -1,0 +1,18 @@
+<apex:page controller="SendMultipleEmails">   
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:messages />
+    <apex:form >
+    	<apex:pageBlock >
+    		<apex:outputLabel value="Subject" for="Subject"/>:<br />     
+                <apex:inputText value="{!subject}" id="Subject" maxlength="80"/>
+                <br /><br />
+                <apex:outputLabel value="Body" for="Body"/>:<br />     
+                <apex:inputTextarea value="{!emailbody}" id="Body"  rows="10" cols="80"/>      
+            <br /><br /><br />
+              <apex:outputText value="Email:"/>
+                    <apex:inputText value="{!sEmail}"/>   
+                <br /><br /><br />
+            <apex:commandButton value="Send Email" action="{!send}" /> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

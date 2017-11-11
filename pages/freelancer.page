@@ -1,0 +1,51 @@
+<apex:page standardController="Account" extensions="freelancerclass" contentType="application/vnd.ms-excel#brahma.xls">
+
+	<apex:form >
+    	<apex:pageBlock title="Related records of Account: {!Account.name}">
+            Contacts
+            <apex:pageBlockTable value="{!conList}" var="c" title="Contacts">
+                <apex:column value="{!c.LastName}" />
+                <apex:column value="{!c.firstname}" />
+                <apex:column value="{!c.email}" />            
+            </apex:pageBlockTable>
+            <br/>
+            Opportunities
+            <apex:pageBlockTable value="{!oppLists}" var="o" title="Opportunities">
+                <apex:column value="{!o.Name}" />
+                <apex:column value="{!o.Id}" />                
+            </apex:pageBlockTable>
+            <br/>
+            Cases
+            <apex:pageBlockTable value="{!caseLists}" var="c" title="Cases">
+                <apex:column value="{!c.Type}" />
+                <apex:column value="{!c.Id}" />                
+            </apex:pageBlockTable>
+            <!--
+            
+			<apex:pageBlockTable value="{!accLists}" var="a">
+                <apex:column>
+                    <apex:pageBlockTable value="{!a.Contacts}" var="c" title="Contacts">
+                        <apex:column value="{!c.lastname}"  />
+                        <apex:column value="{!c.Email}"  />
+                        <apex:column value="{!c.Firstname}"  />
+                        <apex:column value="{!c.Phone}"  />
+                    </apex:pageBlockTable>
+                </apex:column>
+                <apex:column>
+                	<apex:pageBlockTable value="{!a.Opportunities}" var="o">
+                        <apex:column value="{!o.Name}"  />
+                        <apex:column value="{!o.Id}"  />
+                    </apex:pageBlockTable>
+                </apex:column>
+                <apex:column>
+                    <apex:pageBlockTable value="{!a.Cases}" var="cc">
+                        <apex:column value="{!cc.Id}"  />
+                        <apex:column value="{!cc.Type}"  />
+                    </apex:pageBlockTable>
+                </apex:column>                
+            </apex:pageBlockTable> 
+
+-->
+        </apex:pageBlock>
+    </apex:form>  
+</apex:page>

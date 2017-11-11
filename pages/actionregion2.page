@@ -1,0 +1,18 @@
+<apex:page controller="actionregionexample">
+	<apex:pageMessages ></apex:pageMessages>
+    <apex:form >
+    <apex:pageBlock >
+    	<apex:pageBlockSection >
+            <apex:actionRegion >
+        	<apex:inputText value="{!accid}" />
+            <apex:commandButton value="Retrieve" action="{!dosearch}" reRender="op" />
+            </apex:actionRegion>
+            <apex:outputPanel id="op">
+            	<apex:inputField value="{!accobj.industry}" />
+                <apex:inputField value="{!accobj.name}" />
+            
+            </apex:outputPanel>
+        </apex:pageBlockSection>    
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

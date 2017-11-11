@@ -1,0 +1,44 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction,force:hasSObjectName" access="global"
+                controller="DynamicSearchController">
+    <aura:attribute name="page" type="integer" default="1"/>
+    <aura:attribute name="pages" type="integer" default="10"/>
+    <aura:attribute name="total" type="integer" default="200"/>
+    <aura:attribute name="pageSize" type="String" default="10" />
+    <aura:attribute name="searchinput" type="String" />
+    <aura:attribute name="PicklistValue" type="String" default="Status" />
+    <aura:attribute name="FieldsToDisplay" type="String" />
+    <aura:attribute name="object" type="String" default="Account"/>
+    <aura:attribute name="accRecords" type="Account[]" />
+    
+    <aura:attribute name="countOfRecords" type="Integer" />
+    <aura:attribute name="FieldSetObject" type="String" />
+    <aura:attribute name="fields" type="String[]" default="Id,Name,Industry,createddate" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.getFieldsFromFS}" /> 
+    <aura:handler name="DynamicSearchEvent" event="c:DynamicSearchEvent" action="{!c.handleEvent}"/>
+    <c:DynamicSearch sObjectName="{!v.sObjectName}" attrFieldName="{!v.PicklistValue}"/>  
+    {!v.countOfRecords}
+    
+    
+    <table>
+        <thead>
+            <aura:iteration items="{!v.fields}" var="field" >
+                <th>
+                    {!field}
+                </th>
+            </aura:iteration> 
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.accRecords}" var="accRec" >        
+                <tr>
+                    <aura:iteration items="{!v.fields}" var="field">
+                        <td>
+                            <c:DynamicSearchOutput objRecord="{!accRec}" fieldName="{!field}" />
+                        </td>
+                    </aura:iteration>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+</aura:component>

@@ -1,0 +1,13 @@
+<apex:page rendered="true">
+    <apex:form >
+    	<apex:outputLabel > Enter your Name </apex:outputLabel>
+        <script>
+        function test()
+        {
+        	alert("Ok");
+        }
+        </script>
+        
+        <apex:commandButton value="Click here " onmouseover="test()"/>
+    </apex:form>
+</apex:page>

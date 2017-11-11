@@ -1,0 +1,8 @@
+<apex:page standardController="Lead" extensions="LeadPageViewCounter" action="{!updatecount}" >
+    <center>
+        Total Page Views: &nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:outputText value="{!lead.PageCount__c}"> </apex:outputText><br/>
+        	Last Viewed By: &nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:outputText value="{!lead.Last_Viewed_By__c}"> </apex:outputText>
+    </center>
+</apex:page>

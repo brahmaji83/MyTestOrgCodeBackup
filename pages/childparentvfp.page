@@ -1,0 +1,14 @@
+<apex:page controller="childparentsoql">
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Child Accounts" action="{!standardobj}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockTable value="{!con}" var="a" rendered="{! !ISNULL(con)}">
+            	<apex:column value="{!a.lastname}"/>
+                <apex:column value="{!a.firstname}"/>
+                <apex:column value="{!a.account.name}"/>
+            </apex:pageBlockTable>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

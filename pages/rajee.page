@@ -1,0 +1,21 @@
+<apex:page controller="rendershow">
+
+<apex:form >
+    <apex:selectCheckboxes value="{!mycheckvalue}">
+        <apex:selectOption itemlabel="Block1" id="b1" itemValue="check1" />
+        <apex:selectOption itemlabel="Block2" id="b2" itemValue="check2" />
+        <apex:actionsupport event="onselect" action="{!setFlag}" rerender="out"  />           
+    </apex:selectCheckboxes>  
+    
+    <apex:outputPanel id="out" >
+    <apex:pageBlock rendered="{!block1}" id="b3" title="Block 1"> 
+        Block 1<apex:inputText />        
+    </apex:pageBlock>
+    
+    
+    <apex:pageBlock rendered="{!block2}" title="Block 2">
+        Block 2<apex:inputText />        
+    </apex:pageBlock>  
+    </apex:outputPanel>    
+</apex:form>    
+</apex:page>

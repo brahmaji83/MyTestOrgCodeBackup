@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >    
+    <aura:attribute name="account" type="Object" 
+                    description="The record object to be displayed"/>
+    <aura:attribute name="accountRecord" type="Object" 
+                    description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String" 
+                    description="An error message bound to force:recordData"/>
+    
+    <force:recordData aura:id="recordHanlder"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.account}"
+                      targetFields="{!v.accountRecord}"
+                      mode="VIEW"                          
+                      />
+    <ui:outputText value="{!v.accountRecord.Name}" />
+    <ui:outputText value="{!v.accountRecord.Industry}" />
+    <ui:outputTextArea value="{!v.accountRecord.Description}" />
+    <ui:outputPhone value="{!v.accountRecord.Phone}" />
+    
+    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+</aura:component>

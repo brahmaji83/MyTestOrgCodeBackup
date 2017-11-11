@@ -1,0 +1,23 @@
+<apex:page >
+    <apex:form >
+    	<apex:selectList size="1" title="Select a Month" label="Select a Month">
+            <apex:selectOption itemLabel="None" itemValue="None"/>
+            <apex:selectOption itemLabel="Jan" itemValue="Jan" itemEscaped="true"/>
+            <apex:selectOption itemLabel="Feb" itemValue="Feb"/>
+        </apex:selectList>
+        <apex:selectCheckboxes borderVisible="true" border="0" legendText="Select a Month" legendInvisible="false">
+        	<apex:selectOption itemLabel="None" itemValue="None" itemDisabled="true"/>
+            <apex:selectOption itemLabel="Jan" itemValue="Jan" itemEscaped="true"/>
+            <apex:selectOption itemLabel="Feb" itemValue="Feb"/>    
+        </apex:selectCheckboxes>
+        
+        <apex:selectRadio >
+        	<apex:selectOption itemLabel="None" itemValue="None"/>
+            <apex:selectOption itemLabel="Jan" itemValue="Jan"/>
+            <apex:selectOption itemLabel="Feb" itemValue="Feb"/> 
+        </apex:selectRadio>
+        
+        
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:component controller="TestChildLC">
+	Child
+    <lightning:button label="Click" onclick="{!c.myAction}" />
+</aura:component>

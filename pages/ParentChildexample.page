@@ -1,0 +1,12 @@
+<apex:page controller="ParentChildexample" showHeader="true">
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!acc}" var="a">
+        	<apex:column value="{!a.name}"/>
+        	<apex:column >
+            	<apex:pageBlockTable value="{!acc}" var="b">
+                	<apex:column value="{!b.name}"/>
+                </apex:pageBlockTable>
+            </apex:column>        
+        </apex:pageBlockTable>    
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page controller="MohanWrapperTest">
+<apex:form >
+    <apex:pageBlock title="Select your Accounts">
+        <apex:pageBlockTable value="{!wt}" var="a">
+            <apex:column headerValue="Select">
+       			<apex:inputCheckbox value="{!a.b}"></apex:inputCheckbox>
+            </apex:column>
+            <apex:column value="{!a.acct.name}"/>
+            <apex:column value="{!a.sno}" headerValue="S.No" />
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+        	<apex:commandButton value="Select" action="{!SelectedAccount}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

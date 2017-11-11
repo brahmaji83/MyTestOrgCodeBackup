@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!--	<iframe width="560" height="315" src="https://www.youtube.com/embed/nPXfsewcPO8" frameborder="0" ></iframe> -->
+    <aura:attribute name="showmodal" type="boolean" default="false" />
+    <aura:attribute name="youtubeid" type="String" default="https://www.youtube.com/embed/nPXfsewcPO8?autoplay=1" />
+    <lightning:button label="Click for iframe" onclick="{!c.setShowModal}" />
+    <aura:if isTrue="{!v.showmodal}">
+        <div class="demo-only" style="height:640px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Modal Header</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    	<iframe width="640" height="415" src="{!v.youtubeid}"></iframe>    
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick="{!c.ClosetheModal}">Cancel</button>
+                        <button class="slds-button slds-button_brand">Save</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+</aura:component>

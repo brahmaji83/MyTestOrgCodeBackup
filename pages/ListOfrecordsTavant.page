@@ -1,0 +1,22 @@
+<apex:page controller="listofrecords" >
+    <apex:pageBlock title="Accounts">
+    	<apex:pageBlockTable value="{!lacc}" var="a">
+        	<apex:column value="{!a.name}" />
+            <apex:column value="{!a.Id}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Contacts">
+    	<apex:pageBlockTable value="{!lcon}" var="a">
+        	<apex:column value="{!a.name}" />
+            <apex:column value="{!a.Id}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <apex:pageBlock title="Opportunites">
+    	<apex:pageBlockTable value="{!lopp}" var="a">
+        	<apex:column value="{!a.name}" />
+            <apex:column value="{!a.Id}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>    
+</apex:page>

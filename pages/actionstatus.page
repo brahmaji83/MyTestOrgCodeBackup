@@ -1,0 +1,32 @@
+<apex:page controller="Sample">
+    
+    <script>
+    function outputbox(){
+      	var r = confirm("Are you sure want to save?"); 
+        if(r==true){
+            alert("Thanks");
+        }
+        else{
+            	alert("test");
+            }
+        
+        }
+    
+    </script>
+<apex:actionstatus id="counterStatus">
+    <apex:facet name="start">
+        <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height:100%;opacity:0.65;width:100%;">
+            <div class="waitingHolder" style="top: 100px; width: 91px;">
+            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+            <span class="waitingDescription">Loading...</span>
+            </div>
+        </div>
+    </apex:facet>
+</apex:actionstatus>
+<apex:form id="frm">
+    <apex:commandButton value="Test" status="counterStatus" reRender="frm"/>
+	<apex:commandButton value="Tests" reRender="frm" onclick="outputbox();"/>
+
+</apex:form>
+    
+</apex:page>

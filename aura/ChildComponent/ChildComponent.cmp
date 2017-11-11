@@ -1,0 +1,10 @@
+<!--c:createComponent-->
+<aura:component >
+    <aura:attribute name="searchstring" type="String" />
+ <!--   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <ui:inputText label="Search" value="{!v.searchstring}" />
+    <ui:button label="Create" press="{!c.NewcomponentCreate}" />
+    <ui:button label="+" press="{!c.NewcomponentCreate}" />
+    <p>Dynamically created button</p>
+    {!v.body}
+</aura:component>

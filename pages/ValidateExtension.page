@@ -1,0 +1,4 @@
+<apex:page standardController="Account" extensions="ValidateExtension" action="{!Validate}">
+    <apex:pageMessages ></apex:pageMessages>
+    
+</apex:page>

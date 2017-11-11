@@ -1,0 +1,12 @@
+<apex:page controller="PDFGen" >
+    <apex:outputField value="{!acc.Name}" />
+    <apex:form >
+    	<apex:inputText value="{!acc.Phone}" />
+        <apex:commandButton value="PDF" action="{!GenPDF}" >
+        	<apex:param name="accid" value="{!$CurrentPage.parameters.id}" />
+        </apex:commandButton>
+        <apex:commandButton value="Send Email" action="{!sendpdf}" >
+        	<apex:param name="accid" value="{!$CurrentPage.parameters.id}" />
+        </apex:commandButton>
+    </apex:form>
+</apex:page>

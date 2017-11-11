@@ -1,0 +1,15 @@
+<aura:component controller="CampingListController">
+    <aura:attribute name="items" type="Camping_Item__c[]" />
+    <aura:attribute name="newItem" type="Camping_Item__c" default="{'sobjectType': 'Camping_Item__c', 
+                                                                   'Quantity__c' : 0, 
+                                                                   'Price__c' : 0 }" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="addItem" type="c:addItemEvent"/>
+    
+    <ui:inputText label="Name" value="{!v.newItem.Name}" aura:id="campName" />    
+    <ui:inputNumber label="Quantity" value="{!v.newItem.Quantity__c}" />
+    <ui:inputCheckbox label="Packed?" value="{!v.newItem.Packed__c}"/>
+    <ui:inputCurrency aura:id="curr" label="Currency" value="{!v.newItem.Price__c}" />
+    
+    <ui:button label="create campitem" press="{!c.submitForm}" />	
+</aura:component>

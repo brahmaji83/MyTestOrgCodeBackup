@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>Documentation</aura:description>
+	<aura:example name="ExampleName" ref="brahmaji83:SumofFourNumbers" label="Label">
+		Example Description
+	</aura:example>
+</aura:documentation>

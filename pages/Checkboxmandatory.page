@@ -1,0 +1,29 @@
+<apex:page standardController="Account">
+    
+    <script>
+    	function saverecord()
+    	{
+            if(!document.getElementById("{!$Component.fm.pb.pbs.cb}").checked)
+            {                    
+            	alert('Dude, Select the checkbox');
+            }
+            else
+			{
+            	Saveit();
+            }
+        }    
+    </script>
+    
+<apex:form id="fm">
+    <apex:pageBlock id="pb">
+    	<apex:pageBlockSection id="pbs">
+        	<apex:inputField value="{!Account.name}" id="ac"/>
+            <apex:inputCheckbox required="true" id="cb" ></apex:inputCheckbox>            
+        </apex:pageBlockSection>       
+        <apex:pageBlockButtons >
+        	<apex:commandButton value="Save" onclick="saverecord()" />
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    <apex:actionFunction action="{!save}"  name="saveit"  />
+</apex:form>        
+</apex:page>

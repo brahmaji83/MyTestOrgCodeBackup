@@ -1,0 +1,6 @@
+<apex:page tabStyle="Account" standardController="Account">
+<apex:pageblock title="Accounts">
+    <h1><c:firstvfcomponent text="Hello {!$User.FirstName}" textcolor="blue"></c:firstvfcomponent><br/></h1>   
+</apex:pageblock>
+    <apex:detail relatedList="false" title="false"/>
+</apex:page>

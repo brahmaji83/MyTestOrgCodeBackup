@@ -1,0 +1,15 @@
+<apex:page id="pg">
+    <apex:form id="fm">
+      <apex:inputText id="Name" onchange="Show()" />
+      <apex:outputLabel id="age"/>
+        
+      <script>
+        function Show(){
+            // alert('test');
+          var myname = document.getElementById('{!$Component.Name}').value;
+          document.getElementById('{!$Component.age}').innerHTML = myname;
+          
+        }
+       </script>
+    </apex:form> 
+ </apex:page>

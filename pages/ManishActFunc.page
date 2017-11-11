@@ -1,0 +1,19 @@
+<apex:page controller="ManishActFunc" >
+    <script>
+    	function calljs(){
+            // var = document.getElementById("accid").value;
+            //alert('test');
+        	callactf();
+        }
+    </script>
+    <apex:form >
+        <apex:actionFunction name="callactf" action="{!getaccdata}" reRender="opt" />
+        <apex:inputText value="{!accname}" id="accid"/>
+        <apex:commandButton value="Search" onclick="calljs()" reRender="opt" />
+            <apex:pageBlock id="opt">
+                <apex:pageBlockTable value="{!accList}" var="a">
+                    <apex:column value="{!a.Name}" />            
+                </apex:pageBlockTable>
+            </apex:pageBlock>           
+    </apex:form>
+</apex:page>

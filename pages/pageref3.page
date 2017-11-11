@@ -1,0 +1,10 @@
+<apex:page controller="screen1">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:inputField value="{!account.name}"/>
+        </apex:pageBlockSection> 
+    </apex:pageBlock>
+    <apex:commandButton value="Save" action="{!save}"/>
+</apex:form>
+</apex:page>

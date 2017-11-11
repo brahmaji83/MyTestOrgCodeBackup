@@ -1,0 +1,29 @@
+<apex:page controller="actionregionex" >
+    <script>
+    function checkavai(){
+        	checkthis();
+        }
+    </script>
+    
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection id="pbs1">
+                <apex:actionFunction name="checkthis"  action="{!checkthis}" reRender="pbs2, pbs1" />
+                <apex:inputField value="{!myaccount.industry}" required="true" />
+                <apex:actionRegion >
+                    <apex:inputField value="{!myaccount.Name}">                        
+                        <apex:actionSupport action="{!savethis}" event="onchange" reRender="pbs2, pbs1" status="actstat" />
+                        <apex:actionStatus startText="working on" stopText="done" id="actstat" ></apex:actionStatus>
+                    </apex:inputField>
+                    <apex:commandButton value="Check" onclick="checkavai()" reRender="pbs2, pbs1" />
+				</apex:actionRegion>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="pbs2">
+            	Accoujnht Name<apex:outputText value="{!accName}" />
+                Account Industry <apex:outputText value="{!accIndustry}" />
+               acccount <apex:outputText value="{!acccount}"></apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

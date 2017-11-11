@@ -1,0 +1,14 @@
+<apex:page controller="Searchcontroller">
+<apex:form >
+    <apex:pageBlock title="Account Search">
+    	<apex:outputLabel value="Account Name"></apex:outputLabel>
+        <apex:inputText value="{!acc}"/>
+    </apex:pageBlock>
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!saccs}" var="a">
+        	<apex:column value="{!a.name}"/>
+            <apex:column value="{!a.id}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:form>        
+</apex:page>

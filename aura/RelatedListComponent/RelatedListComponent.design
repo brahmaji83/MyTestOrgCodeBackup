@@ -1,0 +1,4 @@
+<design:component >
+	<design:attribute name="childObjects" label="childObjects" description="Name of the person you
+want to greet" />
+</design:component>

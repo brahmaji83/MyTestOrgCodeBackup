@@ -1,0 +1,9 @@
+<apex:page >
+    
+        <apex:outputText value="hearder"> fdsfs</apex:outputText>
+        <apex:insert name="header"></apex:insert>
+        
+        <apex:outputText value="after header"></apex:outputText>
+        <apex:insert name="body"></apex:insert>
+    
+</apex:page>

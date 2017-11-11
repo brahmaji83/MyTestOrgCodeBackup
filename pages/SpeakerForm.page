@@ -1,0 +1,17 @@
+<apex:page standardController="Speaker__c" extensions="SpeakerControllerExtension">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:inputField value="{!Speaker__c.First_Name__c}" />
+                <apex:inputField value="{!Speaker__c.Last_Name__c}" />
+                <apex:inputField value="{!Speaker__c.Email__c}" />               
+                <apex:inputFile value="{!picture}"></apex:inputFile>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!Save}" />
+                <apex:commandButton value="Increment" action="{!increment}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        {!counter}
+    </apex:form>
+</apex:page>

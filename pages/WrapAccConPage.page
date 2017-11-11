@@ -1,0 +1,56 @@
+<apex:page controller="WrapAccountCon" >
+	<apex:form >
+	<apex:pageBlock >
+		<apex:pageBlockTable value="{!accConWrap}" var="ac">
+			<apex:column value="{!ac.acc.Name}"></apex:column>
+			<apex:column value="{!ac.acc.Industry}"></apex:column>
+			<apex:column >
+				<apex:facet name="header"> Contacts </apex:facet>
+				<apex:repeat value="{!ac.conList}" var="c">
+					{!c.LastName} <br/>
+				</apex:repeat>				
+			</apex:column>
+		</apex:pageBlockTable>	
+	
+	
+	<!-- 
+		<div>
+			<table>
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td>Id</td>
+						<td>Industry</td>
+						<td>First Name</td>
+						<td>Last Name</td>						
+					</tr>
+					<apex:repeat value="{!accConWrap}" var="ac">
+						<tr>
+							<td>{!ac.acc.Name}</td>
+							<td>{!ac.acc.Id}</td>
+							<td>{!ac.acc.Industry}</td>
+							<td>{!ac.acc.Industry}</td>
+							<table>
+								<tbody>
+									<apex:repeat value="{!ac.conList}" var ="cont">
+										<tr>
+											<td>{!cont.Firstname}</td>
+											<td>{!cont.LastName}</td>
+											<td>{!cont.Email}</td>
+										</tr>
+									
+									</apex:repeat>
+								</tbody>
+							</table>
+						
+						</tr>
+					</apex:repeat>
+					
+				</tbody>
+			</table>
+		</div>
+		
+		 -->
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

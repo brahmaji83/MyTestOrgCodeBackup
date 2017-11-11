@@ -1,0 +1,11 @@
+<apex:page controller="forumcontrollerclass" cache="false">
+    <apex:form >
+        <div>
+            <apex:selectList value="{!dow}" size="1">
+                <apex:selectOptions value="{!daysOfWeek}"/>
+            </apex:selectList>
+            <apex:inputText />
+            <apex:outputLabel value="{!dow}"/>
+        </div>    
+    </apex:form>
+</apex:page>

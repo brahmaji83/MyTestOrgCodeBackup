@@ -1,0 +1,27 @@
+<apex:page controller="pagination" tabStyle="Opportunity">
+    <apex:form >
+        <apex:actionFunction action="{!refreshpage}" name="refreshpage"/>
+    	<apex:pageBlock id="pb">
+        	<apex:pageBlockTable value="{!opportunities}" var="o">
+            	<apex:column value="{!o.name}" headerValue="Opportunity Name"/>
+                <apex:column value="{!o.amount}" headerValue="Opportunity AMount"/>
+                <apex:column value="{!o.id}" headerValue="Opportunity Id"/>
+                <apex:column value="{!o.stagename}" headerValue="Stasge Name"/>
+            </apex:pageBlockTable>
+              
+            <apex:panelGrid columns="8">
+            	<apex:selectList value="{!size}" size="1" multiselect="false" onchange="refreshpage()">
+                	<apex:selectOptions value="{!pselect}"></apex:selectOptions>
+                </apex:selectList>  
+                <apex:commandButton value="First" action="{!setcon.First}" disabled="{!!setCon.hasPrevious}" reRender="pb"/>
+                <apex:commandButton value="Next" action="{!setcon.Next}" disabled="{!!setcon.hasNext}" reRender="pb"/>
+                <apex:commandButton value="Last" action="{!setcon.Last}" disabled="{!!setcon.hasNext}" reRender="pb"/>
+                <apex:commandButton value="Previous" action="{!setcon.Previous}" disabled="{!!setcon.hasPrevious}" reRender="pb"/>
+                <apex:outputText >
+                	{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,
+                     (setCon.pageNumber * size))} of {!noOfRecords}
+                </apex:outputText>
+            </apex:panelGrid>
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

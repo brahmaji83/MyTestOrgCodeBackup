@@ -1,0 +1,17 @@
+<apex:page controller="checkbox">
+<apex:form >
+    
+    <apex:selectCheckboxes value="{!checkvalue}">
+        <apex:selectOption itemLabel="Check 1" itemValue="Check1"></apex:selectOption>
+        <apex:selectOption itemLabel="Check 2" itemValue="Check2"></apex:selectOption>        
+    </apex:selectCheckboxes>
+    <apex:pageBlock >
+    
+    Hello    
+    </apex:pageBlock>
+    
+    <apex:pageBlock >
+Hello 2
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<aura:component >
+    <b>Welcome to sfdcmonkey.com lightning tutorial </b> <br/>    
+    <aura:attribute name="firstnumber" type="Integer" />
+    <aura:attribute name="secondnumber" type="Integer" />
+    <aura:attribute name="result" type="Integer" />
+    <div>
+    	<ui:inputNumber label="First Number" value="{!v.firstnumber}" aura:id="fnid" />
+    	<ui:inputNumber label="Second Number" value="{!v.secondnumber}" aura:id="snid" />
+    </div>
+    <div>
+        <ui:button label="Sum" press="{!c.doSum}"  />
+        <ui:button label="Multiply" press="{!c.doMultiply}"  /> <br/>
+    </div>
+    Result: <ui:outputNumber value="{!v.result}" />       
+    
+</aura:component>

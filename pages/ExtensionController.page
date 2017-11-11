@@ -1,0 +1,6 @@
+<apex:page standardController="Account" extensions="ExtensionController2">
+    <apex:form >
+    	{!aName}
+    </apex:form>
+    
+</apex:page>

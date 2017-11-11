@@ -1,0 +1,20 @@
+<apex:page >
+	<apex:form >
+    	<apex:pageBlock title="PageBlock Title">
+            <apex:outputLabel >Enter your Name</apex:outputLabel> <br/>
+            <apex:outputLabel value="Enter your name"/>
+            <apex:inputText id="one"/>
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton action="{!Save}" title="Save" value="Save"/>                
+            </apex:pageBlockButtons>
+            	<apex:outputLabel value="Enter your name"/>
+	            <apex:inputText id="one"/>
+        </apex:pageBlock>    
+        <apex:pageBlock >
+        	<apex:commandLink action="google.com" value="Click to Google"/>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

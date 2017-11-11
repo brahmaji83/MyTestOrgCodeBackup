@@ -1,0 +1,42 @@
+<apex:page controller="JSRemotingExample">
+    <Script>
+    	function getRemoteAccount()
+        {
+        	var accname = document.getElementById("accname").value;
+        	console.log(accname);
+        	JSRemotingExample.getAccount(
+                accname,        
+                function(result, event)
+                {
+                    if(event.status){
+        				console.log('entered event if');
+        				console.log('accname before '+result.length);
+        				document.getElementById('remoteAccId').innerHTML = result.Name;
+        				console.log('accname '+result.Name);
+        				refresh();
+                    }
+                },
+                {escape:true}        
+        	);        	
+        }
+    </Script>
+    
+    <apex:form >
+    	<apex:actionFunction name="refresh" action="{!JSR}" reRender="op"/>
+    </apex:form>
+    <input id="accname" type="text" />
+    <button id="accbutton" onClick = "getRemoteAccount()">
+        Search
+    </button>
+    <apex:outputPanel id="op">
+    <apex:pageBlock id="pb">
+    	<apex:pageBlockSection >
+        	<span id="remoteAccId"></span>
+        </apex:pageBlockSection> 
+		<apex:pageBlockTable value="{!acc}" var="a" id="pbt">
+        	<apex:column value="{!a.name}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+	</apex:outputPanel>
+              
+</apex:page>

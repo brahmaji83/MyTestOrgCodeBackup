@@ -1,0 +1,68 @@
+<aura:component controller="AccountLIstLCController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome">
+    <aura:attribute name="isOpen" type="boolean" default="false" />
+    <aura:attribute name="accList" type="Account[]" />
+    <lightning:button label="Open the Modal" onclick="{!c.OpenModal}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.getAccountListdata}" />
+    
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Account Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name">Account Id</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Close Date">Industry</div>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.accList}" var="a">
+            <tr>
+                <th scope="row" data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">
+                        <lightning:button name="{!a.Id}" onclick="{!c.OpenModal}">{!a.Name}</lightning:button>
+                        <a href="javascript:void(0);" onclick="{!c.OpenModal}" name="{!a.Id}"></a>
+                        <force:recordView recordId="{!a.Id}" type="MINI"/>
+                        <span onclick="{!c.OpenModal}">{!a.Name}</span>
+                    </div>
+                </th>
+                <td data-label="Account Id">
+                    <div class="slds-truncate" title="Cloudhub">{!a.Id}</div>
+                </td>
+                <td data-label="Account Industry">
+                    <div class="slds-truncate" >{!a.Industry}</div>
+                </td>                
+            </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+    
+    
+    
+    <aura:if isTrue="{!v.isOpen}">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+                        X<span class="slds-assistive-text">Cancel</span>
+                    </button>
+                    <h2 id="header43" class="slds-text-heading--medium">Modal Header</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    Modal Content
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.closeModal}">Cancel</button>
+                    <button class="slds-button slds-button--brand">Save</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+</aura:component>

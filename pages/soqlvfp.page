@@ -1,0 +1,14 @@
+<apex:page controller="soql1">
+    <apex:form >
+    <apex:pageBlock title="SOQL Result">
+        <apex:pageBlockButtons location="top">
+        	<apex:commandButton value="Click me" action="{!getOffset}"/>
+            <apex:commandButton value="Limit" action="{!getlimit}"/>
+        </apex:pageBlockButtons>
+    	<apex:pageBlockTable value="{!accs}" var="a">
+        	<apex:column value="{!a.name}"/>
+            <apex:column value="{!a.industry}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

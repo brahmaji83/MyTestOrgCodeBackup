@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="Inp1" type="Integer" default="1" />
+    <aura:attribute name="Inp2" type="Integer" />
+    <aura:attribute name="Inp3" type="Integer" />
+    <aura:attribute name="Inp4" type="Integer" />
+    <aura:attribute name="result" type="Integer" />
+    
+    <ui:inputNumber label="Input 1" value="{!v.Inp1}" />
+    <ui:inputNumber label="Input 2" value="{!v.Inp2}" />
+    <ui:inputNumber label="Input 3" value="{!v.Inp3}" />
+    <ui:inputNumber label="Input 4" value="{!v.Inp4}" />
+    Result <ui:outputNumber value="{!v.result}" /> <br/>
+    
+    <ui:button label="Sum" press="{!c.addnumbers}" />
+    <ui:button label="Subtarct" press="{!c.subtractnuimbers}" />
+</aura:component>

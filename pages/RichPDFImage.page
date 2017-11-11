@@ -1,0 +1,7 @@
+<apex:page standardController="Account" renderAs="pdf" >
+    {!Account.Name}
+    {!Account.Rich_Text__c}
+    <apex:outputText value="{!Account.Rich_Text__c}"/>
+    <apex:outputField value="{!Account.Rich_Text__c}"/>
+    
+</apex:page>

@@ -1,0 +1,37 @@
+<apex:page controller="AutoCompleteApex">
+    <title>jQuery UI Autocomplete - Default functionality</title>  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />  
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>  
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+    <script>
+    
+    j$ = jQuery.noConflict();
+    j$(document).ready(function() {                
+        var listofacc = '{!availAccts}';
+        var mapofacc = '{!accMap}';
+        var mynewarray = JSON.parse(listofacc);
+        var mymapofacc = JSON.parse(mapofacc);
+        console.log(mapofacc);
+       	console.log(mynewarray);
+        var mkeys = j$.map( mymapofacc, function( value, key ) {
+          return key;
+        });
+        console.log(mkeys);
+        j$( "#accId, #accIdHTML" ).autocomplete({  
+      		source: j$.map( mymapofacc, function( value, key ) {
+                		j$("#accIdHidden").val(key);
+                      return value;
+                    })
+            
+        });
+    });
+    
+    </script>
+    <apex:form >
+        <apex:actionFunction name="callctrl" action="{!callctrl}" />
+    	<apex:inputText value="{!accName}" id="accId" />
+        <input id="accIdHTML" />
+        <input id="accIdHidden" />
+        <apex:commandButton value="Save the record" action="{!Saveit}" />
+    </apex:form>
+</apex:page>

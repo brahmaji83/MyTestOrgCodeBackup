@@ -1,0 +1,65 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                controller="YoutueSearchForLC">
+    <aura:attribute name="showmodal" type="boolean" default="false" />
+    <aura:attribute name="searchstring" type="String" />
+    <aura:attribute name="Items" type="YoutueSearchForLC.resourceresponse[]" />
+    <aura:attribute name="youtubeid" type="String" />
+    
+    <div class="slds-m-around--large"> 
+        <div class="slds-align_absolute-center">
+        <form class="slds-form--inline ">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="text-input-01">Youtube Search</label>
+                <div class="slds-form-element__control">            
+                    <ui:inputText aura:id="inp1" value="{!v.searchstring}" class="slds-input" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <lightning:button type="button" class="slds-button" onclick="{!c.youtubesearch}" label="test">
+                    <lightning:icon iconName="utility:search" size="x-small"/>                
+                </lightning:button>
+            </div>
+        </form>   
+        
+        </div>
+        <table class="slds-table">
+            <tbody>
+                <aura:iteration items="{!v.Items}" var="a" >
+                    <tr>                        
+                        <td data-label="Youtube Id">
+                            <a href="" onclick="{!c.openModal}" id="{!a.id.videoId}" aura:id="videoauraid">
+                                <img src="{!a.snippet.thumbnails.medium.url}" height="150" width="320" id="{!a.id.videoId}"></img>
+                            </a>
+                        </td>
+                        <td data-label="Youtube Name">
+                            <a href="" onclick="{!c.openModal}" >
+                                <h3 title="Youtube Name" class="header" id="{!a.id.videoId}">{!a.snippet.title}</h3>
+                            </a>
+                            <div class="slds-truncate" title="Youtube Name">{!a.snippet.channelTitle}</div>
+                            <div class="slds-truncate" title="Youtube Name">{!a.snippet.publishedAt}</div>
+                            <div class="slds-truncate" title="Youtube Name">{!a.snippet.description}</div>                            
+                            
+                        </td>                                              
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>        
+    <!-- Show modal with video -->
+    <aura:if isTrue="{!v.showmodal}">
+        <div class="demo-only">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                <div class="slds-modal__container">                    
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <iframe width="640" height="415" src="{!v.youtubeid}"></iframe>    
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick="{!c.ClosetheModal}">Close</button>                        
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </aura:if>
+    
+</aura:component>

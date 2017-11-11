@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="Inp1" type="Integer" />
+    <aura:attribute name="Inp2" type="Integer" />
+    <aura:attribute name="result" type="Integer" />
+    <ui:inputNumber label="First Number" value="{!v.Inp1}" />
+    <ui:inputNumber label="First Number" value="{!v.Inp2}" />
+    <ui:button label="Sum" press="{!c.addthem}" />
+    Result: {!v.result}
+</aura:component>

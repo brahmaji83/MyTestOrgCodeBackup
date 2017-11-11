@@ -1,0 +1,43 @@
+<apex:page controller="SearchContact">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+                <apex:panelGrid columns="4">
+                	Last Name<apex:inputText value="{!lastname}" />
+                    <apex:commandButton value="Check Availability"  action="{!checkavailabl}" reRender="opl,op1" />
+                    <apex:outputPanel id="opl">
+                    	<apex:image url="{!$Resource.tick}" rendered="{!cavail}" height="20" width="20" id="img"/>
+					</apex:outputPanel>                        
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search" action="{!searchcon}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:outputPanel id="op1">
+        <apex:pageBlock id="pb" rendered="{!rend}">            
+            <apex:pageBlockTable value="{!con}" var="c" id="pbt">
+                <apex:column headerValue="Select" >
+                	<apex:inputCheckbox >
+                    </apex:inputCheckbox>
+                </apex:column>
+            	<apex:column headerValue="LastName" >
+               		<apex:commandLink reRender="sop" >
+                    {!c.lastname}
+                    	<apex:param value="{!c.id}" name="conid" />
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!c.email}" />
+                <apex:column value="{!c.id}" />
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Create New" action="{!create}" disabled="{!!csize}" />    
+                <apex:commandButton value="Process Selected" action="{!processselected}" />
+            </apex:pageBlockButtons>
+            <apex:outputPanel id="sop">
+            	<apex:detail subject="{!$CurrentPage.parameters.conid}" id="sdetail" relatedList="false" inlineEdit="true"/>
+            </apex:outputPanel>        
+        </apex:pageBlock>
+        </apex:outputPanel>    
+    </apex:form>
+</apex:page>

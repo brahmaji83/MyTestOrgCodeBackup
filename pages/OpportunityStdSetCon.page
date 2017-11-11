@@ -1,0 +1,22 @@
+<apex:page controller="opportunityList2Con" docType="html">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!opportunities}" var="o">
+            <apex:column >
+				<apex:commandLink >
+                	Edit
+                    <apex:param id="pa" name="pid" value="{!o.id}"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column value="{!o.Name}"/>
+            <apex:column value="{!o.CloseDate}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+        	<apex:commandButton value="Next" action="{!setCon.Next}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+
+<!--    <apex:detail subject="{!$CurrentPage.parameters.pid}" id="detail" relatedList="false"  showChatter="false" inlineEdit="true"/>    -->
+
+</apex:form>        
+</apex:page>

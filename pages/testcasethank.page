@@ -1,0 +1,26 @@
+<apex:page standardController="Case" showHeader="false" tabStyle="case">
+
+<script>
+    window.document.onload = new function(e)
+    {
+     	alert('Your case has been created, Please click OK to see the details');
+    }    
+</script>
+        
+    <center>
+	<apex:composition template="{!$Site.Template}">
+        <apex:define name="body">
+    <apex:pageBlock title="Thankyou for contacting us. your case has been created.">
+        <apex:pageBlockSection title="Case Details" collapsible="false">                 
+            <apex:outputField value="{!case.subject}"/><br/>
+            <apex:outputField value="{!case.CaseNumber}"/><br/>
+            <apex:outputField value="{!case.id}"/>
+            <apex:outputField value="{!case.account.name}"/>               
+        </apex:pageBlockSection>
+    </apex:pageBlock>  
+            </apex:define>
+   	</apex:composition> 
+    </center>    
+          
+    <a href="/apex/testcasepage">Click here to Cases Home Page</a>
+</apex:page>

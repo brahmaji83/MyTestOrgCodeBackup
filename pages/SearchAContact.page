@@ -1,0 +1,25 @@
+<apex:page controller="SearchAContact_Controller">
+    <apex:actionStatus id="actstatus" startText="Processing"></apex:actionStatus>
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	LastName <apex:inputText value="{!conlastname}" >
+                	<apex:actionSupport event="onkeyup" action="{!conSearch}" reRender="op" status="actstatus">
+                		
+                	</apex:actionSupport>
+                </apex:inputText>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Search" action="{!conSearch}" reRender="op" />
+            </apex:pageBlockButtons>
+            <apex:outputPanel id="op">
+                <apex:pageBlockTable value="{!conList}" var="c">
+                    <apex:column value="{!c.Id}" />
+                    <apex:column value="{!c.lastname}" />
+                    <apex:column value="{!c.firstname}" />
+                    <apex:column value="{!c.email}" />
+                </apex:pageBlockTable>
+			</apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

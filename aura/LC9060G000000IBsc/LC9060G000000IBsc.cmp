@@ -1,0 +1,5 @@
+<aura:component implements="force:lightningQuickAction">
+    <ui:inputText label="Enter Name" placeholder="employee Name" aura:id="name"/>
+    <ui:inputText label="My name" aura:id="Myname"/>
+    <ui:button label="submit" press="{!c.callme}"/>
+</aura:component>

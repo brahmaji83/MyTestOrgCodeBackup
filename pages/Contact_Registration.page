@@ -1,0 +1,19 @@
+<apex:page controller="Contact_Registration" showHeader="true" action="{!updatepagecount}">
+    <apex:form >
+        <apex:sectionHeader title="{!count}" subtitle="Contact Registration" printUrl="" help="http://google.com"/>
+        <apex:pageBlock title="Register your details" >
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!con.firstname}"/>
+                <apex:inputField value="{!con.LastName}"/>
+                <apex:inputField value="{!con.email}"/>
+                <apex:inputField value="{!con.phone}"/> 
+				<apex:outputLabel value="Page Views" style="background:red, right=50">{!count}</apex:outputLabel>
+                
+            </apex:pageBlockSection>
+            <apex:PageBlockButtons location="top">
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!sendmail}" value="Send an Email"/>
+            </apex:PageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

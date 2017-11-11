@@ -1,0 +1,3 @@
+<apex:page standardController="Account" renderAs="pdf">
+Hello This is pdf
+</apex:page>

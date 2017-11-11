@@ -1,0 +1,28 @@
+<apex:page controller="SearchDemo">
+        
+    <apex:form id="frm">
+        <apex:actionFunction name="actmethod" action="{!searchacc}" />        
+    	Account Name <apex:inputText value="{!searchstring}" id="acc" />
+        <apex:commandButton value="Search" onclick="searchaccs();" />		
+    </apex:form>
+    
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!acc}" var="a">
+        	<apex:column value="{!a.name}" />
+            <apex:column value="{!a.Id}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <script>
+    	function searchaccs(){
+        	var accname;      
+            accname = document.getElementById('{!$Component.frm.acc}').value;            
+            if(accname == '') 
+            	alert('Please enter account anme');
+            else
+            {
+                console.log('else');
+                actmethod();
+            }
+		}    
+    </script>    
+</apex:page>

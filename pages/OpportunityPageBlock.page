@@ -1,0 +1,17 @@
+<apex:page standardController="Opportunity" recordSetVar="opp">
+<apex:form >
+    <apex:pageBlock >
+    	<apex:pageBlockTable value="{!opp}" var="o" >        	
+            <apex:column value="{!o.id}" />
+            <apex:column >
+            	<apex:outputField value="{!o.name}" />
+            </apex:column>
+            <apex:inlineEditSupport />
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+        	<apex:commandButton value="Save" action="{!save}" />
+            <apex:commandButton value="Save" action="{!quicksave}" />
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>        
+</apex:page>

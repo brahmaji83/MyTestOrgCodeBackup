@@ -1,0 +1,14 @@
+<apex:page controller="PracticeActionSupport">
+    
+    <apex:form >
+        <apex:actionFunction name="acfun" action="{!getdata}" />
+    	<apex:inputText onclick="acfun()" onmouseover="acfun()" />
+        <apex:inputCheckbox />
+        <apex:pageBlock >
+        	<apex:pageBlockTable value="{!accList}" var="a">
+            	<apex:column value="{!a.Id}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+ 
+</apex:page>

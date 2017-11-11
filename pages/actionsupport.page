@@ -1,0 +1,14 @@
+<apex:page controller="actionsupport">
+<apex:form >
+    <apex:pageBlock >
+    	
+        <apex:actionPoller action="{!syncaccounts}" interval="5" reRender="pbt"/>
+        <apex:pageBlockTable value="{!acc}" var="a" id="pbt">        
+        	<apex:column value="{!a.name}"/>
+            <apex:column value="{!a.Id}"/>
+            <apex:column value="{!a.Industry}"/>
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+    </apex:form> 
+</apex:page>

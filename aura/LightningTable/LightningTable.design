@@ -1,0 +1,6 @@
+<design:component >
+    <design:attribute name="object" label="Object Name"
+                      description="Name of the object that you want to query" />    
+    <design:attribute name="fieldSetNameLC" label="fieldSetNameLC" />    
+    <design:attribute name="fieldnameToSearch" label="fieldnameToSearch" />   
+</design:component>

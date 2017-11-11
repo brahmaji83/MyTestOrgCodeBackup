@@ -1,0 +1,57 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="AccInstance" type="Account"/>
+    <aura:attribute name="rowIndex" type="String"/>
+    
+    <!-- Register 2 Lightning Event for handle add or Delete rows on Parent Component  --> 
+    <aura:registerEvent name="DeleteRowEvt" type="c:DeleteRowEvt"/> 
+    <aura:registerEvent name="AddRowEvt" type="c:AddNewRowEvt"/> 
+    
+    <!-- Table Row -->   
+    <tr class="slds-text-title_caps">
+        <td> 
+            {!v.rowIndex + 1}
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.AccInstance.SiteName}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.AccInstance.Site_Address}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.AccInstance.Site_City}"/>
+        </td>
+        <td>
+            <ui:inputPhone class="slds-input" value="{!v.AccInstance.Site_Fax_Number}"/>
+        </td> <td>
+        <ui:inputPhone class="slds-input" value="{!v.AccInstance.Site_Phone_Number}"/>
+        </td>
+        <td>
+            <ui:inputPhone class="slds-input" value="{!v.AccInstance.Site_State}"/>
+        </td>
+        <td>
+            <ui:inputPhone class="slds-input" value="{!v.AccInstance.Site_Zip_Code}"/>
+        </td>
+        
+        
+        <td>
+            <!-- conditionally Display Add or Delete Icons
+                if rowIndex is 0 then show Add New Row Icon else show delete Icon
+            --> 
+            <aura:if isTrue="{!v.rowIndex == 0}">
+                <a onclick="{!c.AddNewRow}">
+                    <lightning:icon iconName="utility:add" class="slds-icon slds-icon_small" size="small" alternativeText="add"/>
+                    <span class="slds-assistive-text">Add Icon</span>
+                </a>    
+                <span class="slds-assistive-text">Delete</span>
+                <aura:set attribute="else">
+                    <a onclick="{!c.removeRow}">
+                        <lightning:icon variant="error" iconName="utility:delete" class="slds-icon slds-icon_small" size="small" alternativeText="icon"/>
+                        <span class="slds-assistive-text">Delete Icon</span>
+                    </a>
+                </aura:set> 
+            </aura:if>
+        </td> 
+    </tr>
+    
+</aura:component>

@@ -1,0 +1,15 @@
+<apex:page standardController="Account">
+<script>
+function show(){
+    alert('stop');
+}       
+</script>    
+<apex:form >
+    <apex:sectionHeader help="https:google.com" title="Mouseover examples"/>
+    <apex:pageBlock title="Mouseoverexample">
+		<apex:pageBlockSection >
+            <apex:inputField value="{!account.name}" onmouseover="show()"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>        
+</apex:page>

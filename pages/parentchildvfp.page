@@ -1,0 +1,28 @@
+<apex:page controller="parentchildsoql">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="ParentChildSearch" action="{!standardobjectlookup}"/>
+                <apex:commandButton value="opportunities" action="{!AccountOpportunities}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!acc}" var="a" rendered="{! flag1}">
+            	<apex:column value="{!a.name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column headervalue="contacts">
+                	<apex:repeat value="{!a.contacts}" var="b">
+                        {!b.lastname}.{!b.firstname}<br/> 
+                	</apex:repeat>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!acc}" var="a" rendered="{! flag2}">
+            	<apex:column value="{!a.name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column headervalue="opportunities">
+                	<apex:repeat value="{!a.opportunities}" var="b">
+                        {!b.name}.{!b.stagename}<br/> 
+                	</apex:repeat>
+                </apex:column>
+            </apex:pageBlockTable>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

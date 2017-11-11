@@ -1,0 +1,17 @@
+<apex:page controller="CreateaCase" showHeader="false" sidebar="false" title="Case Creation">
+    <apex:form >
+    	<apex:pageBlock title="Case Registration">
+        	<apex:pageBlockSection >                
+            	Case Subject<apex:inputText value="{!sCaseSubject}" />
+            	Case Description<apex:inputText value="{!sCaseDescription}" />
+                Case Status<apex:inputText value="{!sCaseStatus}" />
+                Case Priority<apex:inputText value="{!sCasePriority}" />
+                Case Origin<apex:inputText value="{!sCaseOrigin}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!saveit}" />
+            	<apex:commandButton value="Cancel" action="{!cancel}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,5 @@
+<aura:component >
+	This is component 3 <br/>
+    <ui:button label="Fire the Event" press="{!c.fireevent}" />
+    <aura:registerEvent name="compevent" type="c:SimpleComponentEvent" />
+</aura:component>

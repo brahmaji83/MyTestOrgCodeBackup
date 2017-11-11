@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+
+    <aura:attribute name="confirmEmail" type="String" />
+	<aura:registerEvent name="appEvent" type="c:appEvent"/>
+    <aura:handler event="c:appEvent" action="{!c.handleApplicationEvent}"/>
+    <ui:inputEmail aura:id="confirm_email" label="confirm_email" class="slds-input" value="{!v.confirmEmail}"  paste="{!c.stopPasteEvent}"/>
+
+</aura:component>

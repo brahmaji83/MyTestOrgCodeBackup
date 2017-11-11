@@ -1,0 +1,18 @@
+<apex:page controller="ImportDataController">
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection >
+        		Choose your file<apex:inputFile value="{!impdata}" fileName="{!impdatabody}" > </apex:inputFile>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Upload" action="{!ImportDataControllerNow}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accList}" var="a" title="Imported Accounts">
+            	<apex:column value="{!a.Name}">                	
+                </apex:column>
+                <apex:column value="{!a.Industry}" />               
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

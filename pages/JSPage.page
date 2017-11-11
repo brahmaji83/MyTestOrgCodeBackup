@@ -1,0 +1,13 @@
+<apex:page >
+    <script>
+		function search()
+    	{
+            var accname = document.getElementById(
+            }
+    
+    </script>
+    <apex:form >
+    Account <apex:inputText ></apex:inputText>
+        
+        </apex:form>
+</apex:page>

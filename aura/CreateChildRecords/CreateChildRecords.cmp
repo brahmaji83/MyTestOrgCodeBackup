@@ -1,0 +1,58 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <!--Init handler which is call doInit js function on component Load-->  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!--Event handler for Add and Delete Row Event which is fire from Child Component-->    
+    <aura:handler name="DeleteRowEvt" event="c:DeleteRowEvt" action="{!c.removeDeletedRow}"/>
+    <aura:handler name="AddRowEvt" event="c:AddNewRowEvt" action="{!c.addNewRow}"/>
+    
+    <aura:attribute name="accountList" type="Account[]"/> 
+    
+    <!--Header Part-->        
+    <div class="slds-page-header">
+        <h1 class="slds-page-header__title">Create Multiple Contacts, With Add/Delete Rows Dynamically</h1>
+        <p class="slds-text-body_small slds-line-height_reset">By jagannath</p>
+    </div>
+    
+    <!--Table Part-->           
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer"> 
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate">S.No</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="SiteName">SiteName</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Site_Address">Site_Address</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Site_City">Site_City</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Site_Fax_Number">Site_Fax_Number</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Site_Phone_Number">Site_Phone_Number</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Site_State">Site_State</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Site_Zip_Code">Site_Zip_Code</div>
+                </th>
+            </tr>
+        </thead>   
+        <tbody>
+            <!--Iterate the child Component for display Table rows 
+              with pass the List Item Index for track the Every child Component 
+              and pass each List Contact Instance -->         
+            <aura:iteration items="{!v.accountList}" var="item" indexVar="index">
+                <c:NetworkSite AccInstance="{!item}" rowIndex="{!index}" />
+            </aura:iteration>
+        </tbody>
+    </table>
+    <br/>
+</aura:component>

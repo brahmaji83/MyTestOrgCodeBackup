@@ -1,0 +1,4 @@
+<aura:component >
+	Grand CHild
+    <c:TestGrand2ChildLC />
+</aura:component>

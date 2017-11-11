@@ -1,0 +1,4 @@
+<apex:page >
+    
+    {!$Setup.FirstHierarchy__c.Discount__c}
+</apex:page>

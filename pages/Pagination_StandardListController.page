@@ -1,0 +1,21 @@
+<apex:page standardController="Contact" recordSetVar="con">
+    <apex:form >
+    	<apex:pageBlock title="List of Contacts" mode="inlineEdit">
+        	<apex:pageBlockTable value="{!con}" var="c" rows="10">
+            	<apex:column value="{!c.FirstName}"/>
+            	<apex:column value="{!c.lastname}"/>
+                <apex:column headerValue="Email Address">
+                	<apex:outputField value="{!c.email}">
+                    	<apex:inlineEditSupport disabled="true"/>
+                    </apex:outputField>                    
+                </apex:column>
+                <apex:inlineEditSupport showOnEdit="Save"/>
+            </apex:pageBlockTable> 
+            <apex:pageBlockButtons >
+            	<apex:commandButton action="{!QuickSave}" value="Save" id="save"/>
+                
+            </apex:pageBlockButtons>		
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

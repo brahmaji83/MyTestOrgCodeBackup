@@ -1,0 +1,12 @@
+<apex:page >
+    <apex:slds />
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="slds-breadcrumb slds-list--horizontal">
+            <li class="slds-breadcrumb__item slds-text-title--caps slds-active" ><a href="/apex/breadcrumbPage1?core.apexpages.request.devconsole=1">Page 1 </a></li>
+            <li class="slds-breadcrumb__item slds-text-title--caps"><a href="/apex/breadcrumbPage2">Page 2</a></li>
+            <li class="slds-breadcrumb__item slds-text-title--caps active">&nbsp; Page 3</li>
+        </ol>
+    </nav>
+    
+    This is Third Page
+</apex:page>
